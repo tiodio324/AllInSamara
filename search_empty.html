@@ -125,7 +125,7 @@
       <form class="nav-search" x-data="{ searchOpen: false }" role="search" aria-label="Поиск по сайту" action="search_empty.html" method="get">
         <div class="search-input-wrapper">
           <img :src="isLargeScreen ? 'img/search-header-black.svg' : 'img/search-header-white.svg'" alt="Поиск" class="search-icon" onclick="window.location.href='search_empty.html';">
-          <input type="search" placeholder="Поиск по сайту" class="search-input" autocomplete="off" >
+          <input id="site-search" name="site-search" type="search" placeholder="Поиск по сайту" class="search-input" autocomplete="off" >
         </div>
       </form>
       <button class="btn-blind-icon" type="button" aria-label="Показать/скрыть">
@@ -138,9 +138,27 @@
     </div>
   </header>
   <main>
-    
+    <section class="search-form-section">
+      <!-- Хлебные крошки -->
+      <div class="breadcrumbs">
+        <div class="breadcrumbs-list">
+          <a href="index.html" class="breadcrumb-link">Главная</a>
+          <span class="breadcrumb-separator"></span>
+          <span class="breadcrumb-current">Поиск по сайту</span>
+        </div>
+      </div>
+
+      <!-- Форма поиска -->
+      <form class="search-form" role="search" aria-label="Поиск по событиям" action="#" method="get">
+        <div class="hero-search-input-wrapper">
+          <img src="img/search-black.svg" alt="Поиск" class="search-icon">
+          <input id="search-events" name="search-events" type="search" placeholder="Поиск мероприятий" autocomplete="off">
+        </div>
+        <button type="submit" class="search-button">Показать события</button>
+      </form>
+    </section>
   </main>
-  <footer class="site-footer container-margin-top">
+  <footer class="site-footer">
     <div class="footer-content">
       <div class="footer-logo">
         <a href="#" class="brand footer-brand">

@@ -27,6 +27,9 @@ body {
   background: var(--surface);
   color: var(--text);
 }
+main {
+  min-height: calc(100vh - 400px);
+}
 
 .container {
   width: 100%;
@@ -2406,6 +2409,15 @@ body {
   width: var(--progress-width, 0%);
 }
 
+/* Страница поиска */
+.search-form-section {
+  padding: 0 20px;
+}
+
+.search-form-section .breadcrumbs {
+  margin-bottom: 20px;
+}
+
 @media (max-width: 1919px) {
   .container {
     padding: 0 20px;
@@ -3220,7 +3232,7 @@ body {
     box-sizing: border-box;
   }
   
-  .hero-content-mobile .search-form {
+  .hero-content-mobile .search-form, .search-form-section .search-form {
     flex-direction: column;
     gap: 20px;
   }
