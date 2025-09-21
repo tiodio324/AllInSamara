@@ -75,7 +75,7 @@
           <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
             <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
               <span class="nav-text">Мероприятия</span>
-              <img :src="open ? 'img/arrow-black-up.svg' : 'img/arrow-down-black.svg'" alt="Стрелка" class="nav-arrow">
+              <img :src="open ? 'img/arrow-up-black.svg' : 'img/arrow-down-black.svg'" alt="Стрелка" class="nav-arrow">
             </button>
             <div class="nav-dropdown" x-show="open" x-transition>
               <ul class="dropdown-list">
@@ -122,12 +122,12 @@
           <a href="#photos" class="nav-link nav-toggle nav-link--no-dropdown">Фотоотчеты</a>
         </div>
       </nav>
-      <div class="nav-search" x-data="{ searchOpen: false }">
+      <form class="nav-search" x-data="{ searchOpen: false }" role="search" aria-label="Поиск по сайту" action="search_empty.html" method="get">
         <div class="search-input-wrapper">
-          <img :src="isLargeScreen ? 'img/search-header-black.svg' : 'img/search-header-white.svg'" alt="Поиск" class="search-icon">
+          <img :src="isLargeScreen ? 'img/search-header-black.svg' : 'img/search-header-white.svg'" alt="Поиск" class="search-icon" onclick="window.location.href='search_empty.html';">
           <input type="search" placeholder="Поиск по сайту" class="search-input" autocomplete="off" >
         </div>
-      </div>
+      </form>
       <button class="btn-blind-icon" type="button" aria-label="Показать/скрыть">
         <img src="img/blind-eye.svg" alt="Слепой режим">
       </button>

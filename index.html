@@ -119,12 +119,12 @@
           <a href="#photos" class="nav-link nav-toggle nav-link--no-dropdown">Фотоотчеты</a>
         </div>
       </nav>
-      <div class="nav-search" x-data="{ searchOpen: false }">
+      <form class="nav-search" x-data="{ searchOpen: false }" role="search" aria-label="Поиск по сайту" action="search_empty.html" method="get">
         <div class="search-input-wrapper">
-          <img src="img/search.svg" alt="Поиск" class="search-icon">
+          <img src="img/search.svg" alt="Поиск" class="search-icon" onclick="window.location.href='search_empty.html';">
           <input type="search" placeholder="Поиск по сайту" class="search-input" autocomplete="off" >
         </div>
-      </div>
+      </form>
       <button class="btn-blind-icon" type="button" aria-label="Показать/скрыть">
         <img src="img/blind-eye.svg" alt="Слепой режим">
       </button>
