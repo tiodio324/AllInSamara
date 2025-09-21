@@ -33,7 +33,6 @@ body {
   max-width: 1820px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 20px;
 }
 
 .container-margin-top {
@@ -62,7 +61,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* gap: 20px; */
   padding: 15px 30px;
   height: auto;
 }
@@ -278,18 +276,12 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 10px;
   border-radius: 10px;
   transition: background 0.3s ease;
 }
 
 .mobile-menu-toggle:hover {
   background: rgba(255, 255, 255, 0.1);
-}
-
-.mobile-menu-toggle img {
-  width: 24px;
-  height: 24px;
 }
 
 .btn-blind-icon {
@@ -2079,6 +2071,7 @@ body {
   opacity: 0.5;
   margin: 0;
 }
+
 .section-sub {
   color: var(--muted);
   font-size: 14px;
@@ -2110,6 +2103,315 @@ body {
   gap: 20px;
 }
 
+/* Стили для страницы учреждения */
+/* Основная информация об учреждении */
+.institution-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.institution-main {
+  background: #ffffff;
+  border-radius: 50px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.breadcrumb-link {
+  color: #222222;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+  opacity: 0.8;
+}
+
+.breadcrumb-separator {
+  width: 5px;
+  height: 5px;
+  background: #222222;
+  border-radius: 50%;
+}
+
+.breadcrumb-current {
+  color: #222222;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+}
+
+.institution-header {
+  margin-bottom: 20px;
+}
+
+.institution-title {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #222222;
+  margin: 0;
+}
+
+.institution-details {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.institution-contacts {
+  display: flex;
+  justify-content: space-between;
+  gap: 39px;
+}
+
+.contact-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-text p {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.21;
+  color: rgba(34, 34, 34, 0.6);
+  margin: 0;
+}
+
+.description-title {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.21;
+  color: #222222;
+  margin: 0 0 20px 0;
+}
+
+.description-text {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.21;
+  color: rgba(34, 34, 34, 0.6);
+  margin: 0;
+}
+
+.services-title {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.21;
+  color: #222222;
+  margin: 0 0 20px 0;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.service-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border: 1px solid #EEEEEE;
+  border-radius: 20px;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.21;
+  color: #222222;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.service-tag:hover {
+  background: rgba(48, 62, 201, 0.1);
+  border-color: #303EC9;
+}
+
+/* Галерея изображений */
+.images-gallery {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  height: 661px;
+}
+
+.images-gallery__main {
+  position: relative;
+  width: 91px;
+}
+
+.images-gallery__thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-height: 661px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.images-gallery__thumbnails::-webkit-scrollbar {
+  width: 6px;
+}
+
+.images-gallery__thumbnails::-webkit-scrollbar-track {
+  background: rgba(48, 62, 201, 0.15);
+  border-radius: 10px;
+}
+
+.images-gallery__thumbnails::-webkit-scrollbar-thumb {
+  background: #303EC9;
+  border-radius: 10px;
+}
+
+.images-gallery__thumbnails::-webkit-scrollbar-thumb:hover {
+  background: #2a35b0;
+}
+
+.images-gallery__thumbnail {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.images-gallery__thumbnail:hover {
+  border-color: rgba(48, 62, 201, 0.3);
+}
+
+.images-gallery__thumbnail.active {
+  border-color: #303EC9;
+}
+
+.images-gallery__current {
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.images-gallery__current-image {
+  min-width: 946px;
+  max-width: 946px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.images-gallery__controls-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+}
+
+.images-gallery__controls {
+  display: flex;
+  gap: 20px;
+}
+
+.images-gallery__arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(15px);
+  transition: all 0.3s ease;
+}
+
+.images-gallery__arrow:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.images-gallery__dots {
+  display: flex;
+  gap: 3px;
+}
+
+.images-gallery__progress {
+  display: flex;
+  gap: 3px;
+}
+
+.images-gallery__progress-bar {
+  width: 59px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.images-gallery__progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+  width: var(--progress-width, 0%);
+}
+
+@media (max-width: 1919px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
 /* Responsive Design */
 /* 1600px */
 @media (max-width: 1600px) {
@@ -2126,6 +2428,11 @@ body {
   .news-card {
     width: 740px;
   }
+
+  .images-gallery__current-image {
+    min-width: 666px;
+    max-width: 666px;
+  }
 }
 
 /* 1400px */
@@ -2133,8 +2440,16 @@ body {
   .search-input {
     display: none;
   }
+  .search-input-wrapper, .nav-search {
+    background: transparent;
+  }
+  .search-input-wrapper {
+    padding: 0;
+  }
   .search-icon {
     padding-right: 0;
+    min-width: 24px;
+    min-height: 24px;
   }
 }
 
@@ -2179,6 +2494,33 @@ body {
 
   .event-location {
     transform: translateX(calc(50% - 90px));
+  }
+
+  /* Страница учреждения */
+  .institution-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .institution-details p, .service-tag {
+    font-size: 14px;
+  }
+
+  .contact-group {
+    flex-direction: row;
+  }
+
+  .images-gallery__thumbnails {
+    max-height: 450px;
+  }
+
+  .images-gallery {
+    height: 450px;
+  }
+
+  .images-gallery__current-image {
+    min-width: calc(100vw - 91px - 20px);
+    max-width: calc(100vw - 91px - 20px);
   }
 }
 
@@ -2370,6 +2712,19 @@ body {
   .events-gradient {
     width: 200px;
   }
+
+  /* Страница учреждения */
+  .institution-content {
+    flex-direction: column-reverse;
+  }
+
+  .institution-main, .images-gallery__current {
+    border-radius: 20px;
+  }
+
+  .contact-group {
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 769px) {
@@ -2499,6 +2854,15 @@ body {
     justify-content: space-between;
     gap: 20px;
   }
+
+    /* Страница учреждения */  
+    .images-gallery__thumbnails {
+      max-height: 300px;
+    }
+  
+    .images-gallery {
+      height: 300px;
+    }
 }
 
 @media (min-width: 601px) {
@@ -2561,10 +2925,6 @@ body {
     font-size: 48px;
   }
   
-  .search-input-wrapper {
-    padding: 10px 15px;
-  }
-  
   .search-input {
     width: 120px;
     font-size: 16px;
@@ -2606,6 +2966,11 @@ body {
     font-size: 12px;
     padding: 8px 12px;
   }
+
+  /* Страница учреждения */
+  .breadcrumb-link, .breadcrumb-current, .service-tag {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -2626,6 +2991,15 @@ body {
   .chip {
     height: 30px;
     padding: 0 12px;
+  }
+
+  /* Страница учреждения */
+  .breadcrumbs-list {
+    flex-wrap: wrap;
+  }
+
+  .images-gallery__progress-bar {
+    width: 45.6px;
   }
 }
 
@@ -2728,6 +3102,44 @@ body {
     margin-top: 20px;
     align-items: flex-start;
   }
+
+  /* Страница учреждения */
+  .institution-contacts {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  /* Страница учреждения */
+  .images-gallery {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  .images-gallery__main {
+    width: 100%;
+    height: auto;
+  }
+
+  .images-gallery__thumbnails {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 101px;
+  }
+
+  .images-gallery__current {
+    height: 300px;
+    width: 100%;
+  }
+
+  .images-gallery__current-image {
+    width: 100%;
+    height: 100%;
+    min-width: auto;
+    max-width: none;
+  }
 }
 
 /* 320px */
@@ -2826,10 +3238,14 @@ body {
   .search-button {
     width: 100%;
   }
+
+  /* Страница учреждения */
+  .institution-title {
+    font-size: 18px;
+  }
 }
 
-/* Дополнительное правило для header-inner на малых экранах */
-@media (max-width: 768px) {
+/* Дополнительное правило для header-inner на малых экранах */@media (max-width: 768px) {
   .header-inner {
     padding: 15px 30px;
   }
