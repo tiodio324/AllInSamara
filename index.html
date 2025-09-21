@@ -1406,13 +1406,13 @@
             <img src="img/prev.svg" alt="Предыдущая">
           </button>
           <div class="pagination-numbers">
-            <template x-for="page in Math.min(windowWidth > 320 ? 5 : 3, totalPages)" :key="page">
+            <template x-for="page in Math.min(windowWidth > 380 ? 5 : 3, totalPages)" :key="page">
               <button class="pagination-number" :class="{ active: page === currentPage }" @click="currentPage = page" x-text="page"></button>
             </template>
-            <template x-if="totalPages > (windowWidth > 320 ? 5 : 3)">
+            <template x-if="totalPages > (windowWidth > 380 ? 5 : 3)">
               <span class="pagination-dots">...</span>
             </template>
-            <template x-if="totalPages > (windowWidth > 320 ? 5 : 3)">
+            <template x-if="totalPages > (windowWidth > 380 ? 5 : 3)">
               <button class="pagination-number" :class="{ active: totalPages === currentPage }" @click="currentPage = totalPages" x-text="totalPages"></button>
             </template>
           </div>
