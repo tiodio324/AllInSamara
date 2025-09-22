@@ -745,7 +745,7 @@ main {
 
 .event-card {
   flex-shrink: 0;
-  width: 360px;
+  width: 440px;
   height: 440px;
   border-radius: 4px;
   overflow: hidden;
@@ -776,7 +776,7 @@ main {
 
 .event-image {
   position: relative;
-  width: 360px;
+  width: 440px;
   height: 220px;
   overflow: hidden;
 }
@@ -1252,6 +1252,17 @@ main {
 .events-carousel-section {
   position: relative;
   margin-top: 20px;
+}
+
+/* Grid mode для карусели изображений */
+.events-grid {
+  overflow: visible;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .events-carousel-section .carousel-container {
@@ -2410,16 +2421,43 @@ main {
 }
 
 /* Страница поиска */
+/* Страница Поиска: пустая */
 .search-form-section {
-  padding: 0 20px;
+  max-width: 1820px;
+  margin: 0 auto;
 }
 
 .search-form-section .breadcrumbs {
   margin-bottom: 20px;
 }
 
+.search-not-found h2 {
+  font-family: 'TT Nooks Trial', serif;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 1em;
+  letter-spacing: -0.05em;
+  color: #222222;
+  margin: 0;
+}
+
+/* Страница Поиска: не найдено */
+.search-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  min-height: inherit;
+}
+
+.search-not-found h2 {
+  text-align: center;
+  max-width: 1400px;
+}
+
 @media (max-width: 1919px) {
-  .container {
+  .container, .search-form-section {
     padding: 0 20px;
   }
 }
@@ -2429,7 +2467,8 @@ main {
 @media (max-width: 1600px) {
   .section-head h2,
   .main-events .section-head h2,
-  .news .section-head h2 {
+  .news .section-head h2,
+  .search-not-found h2 {
     font-size: 64px;
   }
 
@@ -2439,6 +2478,10 @@ main {
 
   .news-card {
     width: 740px;
+  }
+
+  .event-card, .event-image {
+    width: 360px;
   }
 
   .images-gallery__current-image {
@@ -2473,7 +2516,8 @@ main {
   
   .section-head h2,
   .main-events .section-head h2,
-  .news .section-head h2 {
+  .news .section-head h2,
+  .search-not-found h2 {
     font-size: 56px;
   }
   
@@ -2933,7 +2977,8 @@ main {
   
   .section-head h2,
   .main-events .section-head h2,
-  .news .section-head h2 {
+  .news .section-head h2,
+  .search-not-found h2 {
     font-size: 48px;
   }
   
@@ -3170,8 +3215,9 @@ main {
   
   .section-head h2,
   .main-events .section-head h2,
-  .news .section-head h2 {
-    font-size: 36px;
+  .news .section-head h2,
+  .search-not-found h2 {
+    font-size: 32px;
   }
 
   .search-input {
