@@ -2456,6 +2456,12 @@ main {
   max-width: 1400px;
 }
 
+.institution-buy-ticket {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 @media (max-width: 1919px) {
   .container, .search-form-section {
     padding: 0 20px;
