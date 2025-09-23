@@ -3301,6 +3301,17 @@ main {
   .institution-title {
     font-size: 18px;
   }
+
+  /* Страница поиска: Найдено */
+  .events-grid-section .event-card:nth-child(n+3),
+  .events-carousel-section .carousel-track .event-card:nth-child(n+3) {
+    display: none !important;
+  }
+  .btn-show-more {
+    display: block !important;
+    margin-bottom: 30px;
+    margin-top: -16px;
+  }
 }
 
 /* Дополнительное правило для header-inner на малых экранах */@media (max-width: 768px) {

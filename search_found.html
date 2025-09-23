@@ -338,7 +338,7 @@
           </div>
         </div>
 
-        <div x-ref="wrap" x-data="{ 
+        <div x-ref="wrap" x-data="{
           mode: 'grid',
           ro: null,
           debounce: null,
@@ -1135,6 +1135,41 @@
         </div>
       </div>
     </section>
+
+    <div class="container">
+      <button type="button" style="display: none;" class="search-button btn-show-more">Показать ещё</button>
+    </div>
+
+    <div class="news-pagination" x-data="{ 
+      currentPage: 1, 
+      totalPages: 10,
+      windowWidth: window.innerWidth,
+      init() {
+        this.updateWindowWidth();
+        window.addEventListener('resize', () => this.updateWindowWidth());
+      },
+      updateWindowWidth() {
+        this.windowWidth = window.innerWidth;
+      },
+    }" style="margin-bottom: 50px;">
+      <button class="pagination-arrow pagination-arrow--prev" @click="currentPage = currentPage === 1 ? totalPages : currentPage - 1">
+        <img src="img/prev.svg" alt="Предыдущая">
+      </button>
+      <div class="pagination-numbers">
+        <template x-for="page in Math.min(windowWidth > 380 ? 5 : 3, totalPages)" :key="page">
+          <button class="pagination-number" :class="{ active: page === currentPage }" @click="currentPage = page" x-text="page"></button>
+        </template>
+        <template x-if="totalPages > (windowWidth > 380 ? 5 : 3)">
+          <span class="pagination-dots">...</span>
+        </template>
+        <template x-if="totalPages > (windowWidth > 380 ? 5 : 3)">
+          <button class="pagination-number" :class="{ active: totalPages === currentPage }" @click="currentPage = totalPages" x-text="totalPages"></button>
+        </template>
+      </div>
+      <button class="pagination-arrow pagination-arrow--next" @click="currentPage = currentPage === totalPages ? 1 : currentPage + 1">
+        <img src="img/next.svg" alt="Следующая">
+      </button>
+    </div>
   </main>
   <footer class="site-footer">
     <div class="footer-content">
