@@ -27,6 +27,7 @@
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/mainPage.css">
+  <link rel="stylesheet" href="css/headerBluePages.css">
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -44,9 +45,11 @@
         newsOpen: false,
         mobileMenuOpen: false,
         isDesktop: window.innerWidth > 1124,
+        isLargeScreen: window.innerWidth > 1400,
         init() {
           window.addEventListener('resize', () => {
             this.isDesktop = window.innerWidth > 1124;
+            this.isLargeScreen = window.innerWidth > 1400;
             if (this.isDesktop) {
               this.mobileMenuOpen = false;
             }
@@ -58,7 +61,7 @@
           <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
             <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
               <span class="nav-text">Поддержка</span>
-              <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow">
+              <img :src="open ? 'img/arrow-up-black.svg' : 'img/arrow-down-black.svg'" alt="Стрелка" class="nav-arrow">
             </button>
             <div class="nav-dropdown" x-show="open" x-transition>
               <ul class="dropdown-list">
@@ -72,11 +75,11 @@
           <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
             <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
               <span class="nav-text">Мероприятия</span>
-              <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow">
+              <img :src="open ? 'img/arrow-up-black.svg' : 'img/arrow-down-black.svg'" alt="Стрелка" class="nav-arrow">
             </button>
             <div class="nav-dropdown" x-show="open" x-transition>
               <ul class="dropdown-list">
-                <li><a href="category_on_the_water.html" class="dropdown-link">Категория: На Воде</a></li>
+                <li><a href="#events1" class="dropdown-link">Страница списка</a></li>
                 <li><a href="#events2" class="dropdown-link">Страница списка</a></li>
                 <li><a href="#events3" class="dropdown-link">Страница списка</a></li>
                 <li><a href="#events4" class="dropdown-link">Страница списка</a></li>
@@ -91,7 +94,7 @@
           <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
             <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
               <span class="nav-text">Учреждения</span>
-              <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow">
+              <img :src="open ? 'img/arrow-up-black.svg' : 'img/arrow-down-black.svg'" alt="Стрелка" class="nav-arrow">
             </button>
             <div class="nav-dropdown" x-show="open" x-transition>
               <ul class="dropdown-list">
@@ -105,7 +108,7 @@
           <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
             <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
               <span class="nav-text">Новости</span>
-              <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow">
+              <img :src="open ? 'img/arrow-up-black.svg' : 'img/arrow-down-black.svg'" alt="Стрелка" class="nav-arrow">
             </button>
             <div class="nav-dropdown" x-show="open" x-transition>
               <ul class="dropdown-list">
@@ -121,7 +124,7 @@
       </nav>
       <form class="nav-search" x-data="{ searchOpen: false }" role="search" aria-label="Поиск по сайту" action="search_empty.html" method="get">
         <div class="search-input-wrapper">
-          <img src="img/search.svg" alt="Поиск" class="search-icon" onclick="window.location.href='search_empty.html';">
+          <img :src="isLargeScreen ? 'img/search-header-black.svg' : 'img/search-header-white.svg'" alt="Поиск" class="search-icon" onclick="window.location.href='search_empty.html';">
           <input id="site-search" name="site-search" type="search" placeholder="Поиск по сайту" class="search-input" autocomplete="off" >
         </div>
       </form>
@@ -134,370 +137,18 @@
       </div>
     </div>
   </header>
-  <section class="hero" id="home">
-    <!-- Логотип в центре -->
-    <div class="hero-logo">
-          <img src="img/logo_vertical.svg" alt="Логотип" class="brand-mark">
-    </div>
-
-    <!-- Основной контент -->
-    <div class="hero-content container-margin-top">
-      <!-- Стрелки слайдера -->
-      <div class="hero-slider">
-        <button type="button" class="slider-arrow slider-arrow--prev">
-          <img src="img/arrow-left.svg" alt="Предыдущий" class="arrow-icon">
-        </button>
-        <button type="button" class="slider-arrow slider-arrow--next">
-          <img src="img/arrow-right.svg" alt="Следующий" class="arrow-icon">
-        </button>
-      </div>
-
-      <!-- Поисковая форма -->
-      <div class="hero-search-card">
-        <form class="search-form" role="search" aria-label="Поиск по событиям" action="#" method="get">
-          <div class="hero-search-input-wrapper">
-            <img src="img/search-black.svg" alt="Поиск" class="search-icon">
-            <input id="q" name="q" type="search" value="📍#ВсеВСамаре  📍#ВсеВСамаре" autocomplete="off">
-          </div>
-          <button type="submit" class="search-button">Показать события</button>
-        </form>
-
-        <!-- Теги -->
-        <div class="hero-tags">
-          <a class="tag tag-outline" href="#loc"><img class="base-icon" src="img/round-pushpin.png" alt=""> По локации</a>
-          <a class="tag" href="#format"><img class="base-icon" src="img/performing-arts.png" alt=""> По формату мероприятия</a>
-          <a class="tag" href="#mood"><img class="base-icon" src="img/woman-dancing.png" alt=""> По настроению</a>
-          <a class="tag" href="#rubrics"><img class="base-icon" src="img/camera-with-flash.png" alt=""> Авторские рубрики</a>
-        </div>
-
-        <!-- Хештеги -->
-        <div class="hero-hashtags">
-          <span class="hashtag"><img class="base-icon" src="img/round-pushpin.png" alt=""> #ВсеВТольятти</span>
-          <span class="hashtag"><img class="base-icon" src="img/round-pushpin.png" alt=""> #ВсеВЦентре</span>
-          <span class="hashtag"><img class="base-icon" src="img/round-pushpin.png" alt=""> #ВсеНаВолге</span>
-          <span class="hashtag"><img class="base-icon" src="img/round-pushpin.png" alt=""> #ВсеВПарке</span>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Дублированный hero-content для мобильных устройств -->
-    <div class="hero-content-mobile">
-      <!-- Поисковая форма -->
-      <div class="hero-search-card">
-        <form class="search-form" role="search" aria-label="Поиск по событиям" action="#" method="get">
-          <div class="hero-search-input-wrapper">
-            <img src="img/search-black.svg" alt="Поиск" class="search-icon">
-            <input id="q-mobile" name="q" type="search" value="📍#ВсеВСамаре" autocomplete="off">
-          </div>
-          <button type="submit" class="search-button">Показать события</button>
-        </form>
-
-        <!-- Теги -->
-        <div class="hero-tags">
-          <a class="tag tag-outline" href="#loc">По локации</a>
-          <a class="tag" href="#format">По формату мероприятия</a>
-          <a class="tag" href="#mood">По настроению</a>
-          <a class="tag" href="#rubrics">Авторские рубрики</a>
-        </div>
-
-        <!-- Хештеги -->
-        <div class="hero-hashtags">
-          <span class="hashtag">#ВсеВТольятти</span>
-          <span class="hashtag">#ВсеВТольятти</span>
-          <span class="hashtag">#ВсеВТольятти</span>
-          <span class="hashtag">#ВсеВЦентре</span>
-          <span class="hashtag">#ВсеНаВолге</span>
-          <span class="hashtag">#ВсеВПарке</span>
-          <button class="hashtag-all-tags">Все теги</button>
-        </div>
-      </div>
-    </div>
-
   <main>
-    <section class="recommended" id="recommended">
-      <div class="container container-margin-top">
-        <div class="section-head">
-          <span class="section-hashtag">#ВсеРекомендуют</span>
-          <h2>Не пропустите главное</h2>
-        </div>
-        <div class="recommended-carousel">
-          <div class="carousel-container">
-            <div class="carousel-track">
-              <article class="event-card">
-                <div class="event-image">
-                  <img src="img/event-card.png" alt="Джаз на Волге" loading="lazy">
-                  <div class="event-date">
-                    <span>07.09 <sup>сб</sup></span>
-                  </div>
-                  <div class="event-location">
-                    <img src="img/event-card_location.svg" alt="">
-                    <span>Самара, набережная р. Волги</span>
-                  </div>
-                </div>
-                <div class="event-content">
-                  <div class="event-info">
-                    <div class="event-title-section">
-                      <h3 class="event-title">Джаз на Волге</h3>
-                    </div>
-                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
-                    <div class="event-tags">
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                    </div>
-                  </div>
-                  <a href="#" class="event-link">Узнать подробнее</a>
-                </div>
-              </article>
-
-              <article class="event-card">
-                <div class="event-image">
-                  <img src="img/event-card.png" alt="Джаз на Волге" loading="lazy">
-                  <div class="event-date">
-                    <span>07.09 <sup>сб</sup></span>
-                  </div>
-                  <div class="event-location">
-                    <img src="img/event-card_location.svg" alt="">
-                    <span>Самара, набережная р. Волги</span>
-                  </div>
-                </div>
-                <div class="event-content">
-                  <div class="event-info">
-                    <div class="event-title-section">
-                      <h3 class="event-title">Джаз на Волге</h3>
-                    </div>
-                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
-                    <div class="event-tags">
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                    </div>
-                  </div>
-                  <a href="#" class="event-link">Узнать подробнее</a>
-                </div>
-              </article>
-
-              <article class="event-card">
-                <div class="event-image">
-                  <img src="img/event-card.png" alt="Джаз на Волге" loading="lazy">
-                  <div class="event-date">
-                    <span>07.09 <sup>сб</sup></span>
-                  </div>
-                  <div class="event-location">
-                    <img src="img/event-card_location.svg" alt="">
-                    <span>Самара, набережная р. Волги</span>
-                  </div>
-                </div>
-                <div class="event-content">
-                  <div class="event-info">
-                    <div class="event-title-section">
-                      <h3 class="event-title">Джаз на Волге</h3>
-                    </div>
-                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
-                    <div class="event-tags">
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                    </div>
-                  </div>
-                  <a href="#" class="event-link">Узнать подробнее</a>
-                </div>
-              </article>
-
-              <article class="event-card">
-                <div class="event-image">
-                  <img src="img/event-card.png" alt="Джаз на Волге" loading="lazy">
-                  <div class="event-date">
-                    <span>07.09 <sup>сб</sup></span>
-                  </div>
-                  <div class="event-location">
-                    <img src="img/event-card_location.svg" alt="">
-                    <span>Самара, набережная р. Волги</span>
-                  </div>
-                </div>
-                <div class="event-content">
-                  <div class="event-info">
-                    <div class="event-title-section">
-                      <h3 class="event-title">Джаз на Волге</h3>
-                    </div>
-                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
-                    <div class="event-tags">
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                    </div>
-                  </div>
-                  <a href="#" class="event-link">Узнать подробнее</a>
-                </div>
-              </article>
-
-              <article class="event-card">
-                <div class="event-image">
-                  <img src="img/event-card.png" alt="Джаз на Волге" loading="lazy">
-                  <div class="event-date">
-                    <span>07.09 <sup>сб</sup></span>
-                  </div>
-                  <div class="event-location">
-                    <img src="img/event-card_location.svg" alt="">
-                    <span>Самара, набережная р. Волги</span>
-                  </div>
-                </div>
-                <div class="event-content">
-                  <div class="event-info">
-                    <div class="event-title-section">
-                      <h3 class="event-title">Джаз на Волге</h3>
-                    </div>
-                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
-                    <div class="event-tags">
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                    </div>
-                  </div>
-                  <a href="#" class="event-link">Узнать подробнее</a>
-                </div>
-              </article>
-
-              <article class="event-card">
-                <div class="event-image">
-                  <img src="img/event-card.png" alt="Джаз на Волге" loading="lazy">
-                  <div class="event-date">
-                    <span>07.09 <sup>сб</sup></span>
-                  </div>
-                  <div class="event-location">
-                    <img src="img/event-card_location.svg" alt="">
-                    <span>Самара, набережная р. Волги</span>
-                  </div>
-                </div>
-                <div class="event-content">
-                  <div class="event-info">
-                    <div class="event-title-section">
-                      <h3 class="event-title">Джаз на Волге</h3>
-                    </div>
-                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
-                    <div class="event-tags">
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                    </div>
-                  </div>
-                  <a href="#" class="event-link">Узнать подробнее</a>
-                </div>
-              </article>
-
-              <article class="event-card">
-                <div class="event-image">
-                  <img src="img/event-card.png" alt="Джаз на Волге" loading="lazy">
-                  <div class="event-date">
-                    <span>07.09 <sup>сб</sup></span>
-                  </div>
-                  <div class="event-location">
-                    <img src="img/event-card_location.svg" alt="">
-                    <span>Самара, набережная р. Волги</span>
-                  </div>
-                </div>
-                <div class="event-content">
-                  <div class="event-info">
-                    <div class="event-title-section">
-                      <h3 class="event-title">Джаз на Волге</h3>
-                    </div>
-                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
-                    <div class="event-tags">
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                    </div>
-                  </div>
-                  <a href="#" class="event-link">Узнать подробнее</a>
-                </div>
-              </article>
-
-              <article class="event-card">
-                <div class="event-image">
-                  <img src="img/event-card.png" alt="Джаз на Волге" loading="lazy">
-                  <div class="event-date">
-                    <span>07.09 <sup>сб</sup></span>
-                  </div>
-                  <div class="event-location">
-                    <img src="img/event-card_location.svg" alt="">
-                    <span>Самара, набережная р. Волги</span>
-                  </div>
-                </div>
-                <div class="event-content">
-                  <div class="event-info">
-                    <div class="event-title-section">
-                      <h3 class="event-title">Джаз на Волге</h3>
-                    </div>
-                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
-                    <div class="event-tags">
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                      <span class="event-tag">tag</span>
-                    </div>
-                  </div>
-                  <a href="#" class="event-link">Узнать подробнее</a>
-              </div>
-            </article>
-
-            <article class="event-card">
-              <div class="event-image">
-                <img src="img/event-card.png" alt="Джаз на Волге" loading="lazy">
-                <div class="event-date">
-                  <span>07.09 <sup>сб</sup></span>
-                </div>
-                <div class="event-location">
-                  <img src="img/event-card_location.svg" alt="">
-                  <span>Самара, набережная р. Волги</span>
-                </div>
-              </div>
-              <div class="event-content">
-                <div class="event-info">
-                  <div class="event-title-section">
-                    <h3 class="event-title">Джаз на Волге</h3>
-                  </div>
-                  <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
-                  <div class="event-tags">
-                    <span class="event-tag">tag</span>
-                    <span class="event-tag">tag</span>
-                    <span class="event-tag">tag</span>
-                  </div>
-              </div>
-              <a href="#" class="event-link">Узнать подробнее</a>
-            </div>
-            </article>
-
-            <article class="event-card">
-              <div class="event-image">
-                <img src="img/event-card.png" alt="Джаз на Волге" loading="lazy">
-                <div class="event-date">
-                  <span>07.09 <sup>сб</sup></span>
-                </div>
-                <div class="event-location">
-                  <img src="img/event-card_location.svg" alt="">
-                  <span>Самара, набережная р. Волги</span>
-                </div>
-              </div>
-              <div class="event-content">
-                <div class="event-info">
-                  <div class="event-title-section">
-                    <h3 class="event-title">Джаз на Волге</h3>
-                  </div>
-                  <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
-                  <div class="event-tags">
-                    <span class="event-tag">tag</span>
-                    <span class="event-tag">tag</span>
-                    <span class="event-tag">tag</span>
-                  </div>
-                </div>
-                <a href="#" class="event-link">Узнать подробнее</a>
-              </div>
-            </article>
-            </div>
-          </div>
-          <div class="events-gradient events-gradient--right"></div>
+    <section class="search-form-section">
+      <!-- Хлебные крошки -->
+      <div class="breadcrumbs">
+        <div class="breadcrumbs-list">
+          <a href="index.html" class="breadcrumb-link">Главная</a>
+          <span class="breadcrumb-separator"></span>
+          <span class="breadcrumb-current">Поиск по сайту</span>
         </div>
       </div>
+
+      <h2 class="categories-list-title">Категория: На Воде</h2>
     </section>
 
     <section class="main-events" id="main-events" x-data="{
@@ -519,21 +170,7 @@
         };
       }
     }">
-      <div class="container container-margin-top">
-        <div class="section-head margin-bottom-50">
-          <h2>Культурный навигатор<br>Самарской области</h2>
-          <div class="filter-tags">
-            <div>
-              <button class="filter-tag active">Сегодня</button>
-              <button class="filter-tag">Завтра</button>
-            </div>
-            <div>
-              <button class="filter-tag">На выходных</button>
-              <button class="filter-tag">Ближайшие 7 дней</button>
-            </div>
-          </div>
-        </div>
-
+      <div class="container">
         <div class="date-filter">
           <div class="calendar">
             <div class="calendar-header">
@@ -694,7 +331,280 @@
           </div>
         </div>
 
-        <div class="events-carousel-section">
+        <div x-ref="wrap" x-data="{
+          mode: 'grid',
+          ro: null,
+          debounce: null,
+          cardWidthPx: null,
+          scheduleMeasure() { clearTimeout(this.debounce); this.debounce = setTimeout(() => this.measure(), 150); },
+          measure() {
+            const wrap = this.$refs.wrap;
+            const grid = this.$refs.grid;
+            if (!wrap || !grid) return;
+            const total = grid.querySelectorAll('.event-card').length;
+            const anyCard = grid.querySelector('.event-card') || wrap.querySelector('.event-card');
+            if (!anyCard || total === 0) return;
+            const gap = 20;
+            const containerWidth = wrap.clientWidth;
+            if (this.mode === 'grid') {
+              const measured = anyCard.offsetWidth;
+              if (measured) this.cardWidthPx = measured;
+            }
+            const cardW = this.cardWidthPx || anyCard.offsetWidth || 440;
+            const perRow = Math.max(1, Math.floor((containerWidth + gap) / (cardW + gap)));
+            const rows = Math.ceil(total / perRow);
+            if (this.mode === 'grid' && rows >= 4) this.mode = 'carousel';
+            else if (this.mode === 'carousel' && rows <= 3) this.mode = 'grid';
+          },
+          init() {
+            this.$nextTick(() => { this.measure(); });
+            try {
+              this.ro = new ResizeObserver(() => { this.scheduleMeasure(); });
+              this.ro.observe(this.$refs.wrap);
+            } catch (e) {}
+            const imgs = Array.from(this.$refs.wrap.querySelectorAll('img'));
+            imgs.forEach(img => { if (!img.complete) img.addEventListener('load', () => { this.scheduleMeasure(); }, { once: true }); });
+            window.addEventListener('load', () => { this.scheduleMeasure(); });
+            window.addEventListener('resize', () => { this.scheduleMeasure(); });
+          }
+        }">
+          <div class="events-grid events-grid-section" x-ref="grid" x-show="mode === 'grid'" x-cloak>
+            <article class="event-card">
+              <div class="event-image">
+                <img src="img/event-card.png" alt="Джаз на Волге">
+                <div class="event-date">
+                  <span>07.09 <sup>сб</sup></span>
+                </div>
+                <div class="event-location">
+                  <img src="img/event-card_location.svg" alt="">
+                  <span>Самара, набережная р. Волги</span>
+                </div>
+              </div>
+              <div class="event-content">
+                <div class="event-info">
+                  <div class="event-title-section">
+                    <h3 class="event-title">Джаз на Волге</h3>
+                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
+                    <div class="event-tags">
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                    </div>
+                  </div>
+                  <a href="#" class="event-link">Узнать подробнее</a>
+                </div>
+              </div>
+            </article>
+            <article class="event-card">
+              <div class="event-image">
+                <img src="img/event-card.png" alt="Джаз на Волге">
+                <div class="event-date">
+                  <span>07.09 <sup>сб</sup></span>
+                </div>
+                <div class="event-location">
+                  <img src="img/event-card_location.svg" alt="">
+                  <span>Самара, набережная р. Волги</span>
+                </div>
+              </div>
+              <div class="event-content">
+                <div class="event-info">
+                  <div class="event-title-section">
+                    <h3 class="event-title">Джаз на Волге</h3>
+                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
+                    <div class="event-tags">
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                    </div>
+                  </div>
+                  <a href="#" class="event-link">Узнать подробнее</a>
+                </div>
+              </div>
+            </article>
+            <article class="event-card">
+              <div class="event-image">
+                <img src="img/event-card.png" alt="Джаз на Волге">
+                <div class="event-date">
+                  <span>07.09 <sup>сб</sup></span>
+                </div>
+                <div class="event-location">
+                  <img src="img/event-card_location.svg" alt="">
+                  <span>Самара, набережная р. Волги</span>
+                </div>
+              </div>
+              <div class="event-content">
+                <div class="event-info">
+                  <div class="event-title-section">
+                    <h3 class="event-title">Джаз на Волге</h3>
+                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
+                    <div class="event-tags">
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                    </div>
+                  </div>
+                  <a href="#" class="event-link">Узнать подробнее</a>
+                </div>
+              </div>
+            </article>
+            <article class="event-card">
+              <div class="event-image">
+                <img src="img/event-card.png" alt="Джаз на Волге">
+                <div class="event-date">
+                  <span>07.09 <sup>сб</sup></span>
+                </div>
+                <div class="event-location">
+                  <img src="img/event-card_location.svg" alt="">
+                  <span>Самара, набережная р. Волги</span>
+                </div>
+              </div>
+              <div class="event-content">
+                <div class="event-info">
+                  <div class="event-title-section">
+                    <h3 class="event-title">Джаз на Волге</h3>
+                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
+                    <div class="event-tags">
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                    </div>
+                  </div>
+                  <a href="#" class="event-link">Узнать подробнее</a>
+                </div>
+              </div>
+            </article>
+            <article class="event-card">
+              <div class="event-image">
+                <img src="img/event-card.png" alt="Джаз на Волге">
+                <div class="event-date">
+                  <span>07.09 <sup>сб</sup></span>
+                </div>
+                <div class="event-location">
+                  <img src="img/event-card_location.svg" alt="">
+                  <span>Самара, набережная р. Волги</span>
+                </div>
+              </div>
+              <div class="event-content">
+                <div class="event-info">
+                  <div class="event-title-section">
+                    <h3 class="event-title">Джаз на Волге</h3>
+                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
+                    <div class="event-tags">
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                    </div>
+                  </div>
+                  <a href="#" class="event-link">Узнать подробнее</a>
+                </div>
+              </div>
+            </article>
+            <article class="event-card">
+              <div class="event-image">
+                <img src="img/event-card.png" alt="Джаз на Волге">
+                <div class="event-date">
+                  <span>07.09 <sup>сб</sup></span>
+                </div>
+                <div class="event-location">
+                  <img src="img/event-card_location.svg" alt="">
+                  <span>Самара, набережная р. Волги</span>
+                </div>
+              </div>
+              <div class="event-content">
+                <div class="event-info">
+                  <div class="event-title-section">
+                    <h3 class="event-title">Джаз на Волге</h3>
+                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
+                    <div class="event-tags">
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                    </div>
+                  </div>
+                  <a href="#" class="event-link">Узнать подробнее</a>
+                </div>
+              </div>
+            </article>
+            <article class="event-card">
+              <div class="event-image">
+                <img src="img/event-card.png" alt="Джаз на Волге">
+                <div class="event-date">
+                  <span>07.09 <sup>сб</sup></span>
+                </div>
+                <div class="event-location">
+                  <img src="img/event-card_location.svg" alt="">
+                  <span>Самара, набережная р. Волги</span>
+                </div>
+              </div>
+              <div class="event-content">
+                <div class="event-info">
+                  <div class="event-title-section">
+                    <h3 class="event-title">Джаз на Волге</h3>
+                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
+                    <div class="event-tags">
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                    </div>
+                  </div>
+                  <a href="#" class="event-link">Узнать подробнее</a>
+                </div>
+              </div>
+            </article>
+            <article class="event-card">
+              <div class="event-image">
+                <img src="img/event-card.png" alt="Джаз на Волге">
+                <div class="event-date">
+                  <span>07.09 <sup>сб</sup></span>
+                </div>
+                <div class="event-location">
+                  <img src="img/event-card_location.svg" alt="">
+                  <span>Самара, набережная р. Волги</span>
+                </div>
+              </div>
+              <div class="event-content">
+                <div class="event-info">
+                  <div class="event-title-section">
+                    <h3 class="event-title">Джаз на Волге</h3>
+                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
+                    <div class="event-tags">
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                    </div>
+                  </div>
+                  <a href="#" class="event-link">Узнать подробнее</a>
+                </div>
+              </div>
+            </article>
+            <article class="event-card">
+              <div class="event-image">
+                <img src="img/event-card.png" alt="Джаз на Волге">
+                <div class="event-date">
+                  <span>07.09 <sup>сб</sup></span>
+                </div>
+                <div class="event-location">
+                  <img src="img/event-card_location.svg" alt="">
+                  <span>Самара, набережная р. Волги</span>
+                </div>
+              </div>
+              <div class="event-content">
+                <div class="event-info">
+                  <div class="event-title-section">
+                    <h3 class="event-title">Джаз на Волге</h3>
+                    <p class="event-description">Открытый концерт на набережной с участием джаз-бэндов из Самары и Москвы. Живая музыка под закат.</p>
+                    <div class="event-tags">
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                      <span class="event-tag">tag</span>
+                    </div>
+                  </div>
+                  <a href="#" class="event-link">Узнать подробнее</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="events-carousel-section" x-ref="carouselA" x-show="mode === 'carousel'" x-cloak>
           <div class="carousel-container">
             <div class="carousel-track">
               <article class="event-card">
@@ -857,8 +767,7 @@
           </div>
           <div class="events-gradient events-gradient--right"></div>
         </div>
-
-        <div class="events-carousel-section">
+        <div class="events-carousel-section" x-show="mode === 'carousel'" x-cloak>
           <div class="carousel-container">
             <div class="carousel-track">
               <article class="event-card">
@@ -1020,6 +929,7 @@
             </div>
           </div>
           <div class="events-gradient events-gradient--right"></div>
+          </div>
         </div>
       </div>
       
@@ -1219,7 +1129,11 @@
       </div>
     </section>
 
-    <section class="news" id="news" x-data="{ 
+    <div class="container">
+      <button type="button" style="display: none;" class="search-button btn-show-more">Показать ещё</button>
+    </div>
+
+    <div class="news-pagination" x-data="{ 
       currentPage: 1, 
       totalPages: 10,
       windowWidth: window.innerWidth,
@@ -1230,218 +1144,27 @@
       updateWindowWidth() {
         this.windowWidth = window.innerWidth;
       },
-      get cardWidth() {
-        if (this.windowWidth >= 1601) return 920;
-        if (this.windowWidth >= 640) return 740;
-        return 230;
-      }
-    }">
-      <div class="container container-margin-top">
-        <div class="section-head">
-          <span class="section-hashtag">#ВсеВТеме</span>
-          <h2>Новости и авторские статьи</h2>
-        </div>
-        <div class="news-filter">
-          <div class="news-tags">
-            <button class="news-tag active">Новости</button>
-            <button class="news-tag">Меры поддержки</button>
-            <button class="news-tag">Авторские статьи</button>
-          </div>
-        </div>
-        <div class="news-carousel">
-          <div class="news-cards" :style="`transform: translateX(-${(currentPage - 1) * cardWidth}px)`">
-            <!-- Дубликат последней карточки для циклической навигации -->
-            <article class="news-card">
-              <div class="news-image">
-                <img src="img/news-card_1.png" alt="Новость">
-              </div>
-              <div class="news-content">
-                <div class="news-text">
-                  <h3 class="news-title">Филармония запускает абонемент для студентов (Последняя карточка)</h3>
-                  <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                </div>
-                <a href="#" class="news-link">Читать подробнее</a>
-              </div>
-            </article>
-            <!-- Первая карточка -->
-            <article class="news-card">
-              <div class="news-image">
-                <img src="img/news-card_1.png" alt="Новость">
-              </div>
-              <div class="news-content">
-                <div class="news-text">
-                  <h3 class="news-title">1. Филармония запускает абонемент для студентов</h3>
-                  <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                </div>
-                <a href="#" class="news-link">Читать подробнее</a>
-              </div>
-            </article>
-            <article class="news-card">
-              <div class="news-image">
-                <img src="img/news-card_2.png" alt="Новость">
-              </div>
-              <div class="news-content">
-                <div class="news-text">
-                  <h3 class="news-title">2. Филармония запускает абонемент для студентов</h3>
-                  <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                </div>
-                <a href="#" class="news-link">Читать подробнее</a>
-              </div>
-            </article>
-            <article class="news-card">
-              <div class="news-image">
-                <img src="img/news-card_3.png" alt="Новость">
-              </div>
-              <div class="news-content">
-                <div class="news-text">
-                  <h3 class="news-title">Филармония запускает абонемент для студентов</h3>
-                  <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                </div>
-                <a href="#" class="news-link">Читать подробнее</a>
-              </div>
-            </article>
-            <article class="news-card">
-              <div class="news-image">
-                <img src="img/news-card_1.png" alt="Новость">
-              </div>
-              <div class="news-content">
-                <div class="news-text">
-                  <h3 class="news-title">Филармония запускает абонемент для студентов</h3>
-                  <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                </div>
-                <a href="#" class="news-link">Читать подробнее</a>
-              </div>
-            </article>
-            <article class="news-card">
-              <div class="news-image">
-                <img src="img/news-card_2.png" alt="Новость">
-              </div>
-              <div class="news-content">
-                <div class="news-text">
-                  <h3 class="news-title">Филармония запускает абонемент для студентов</h3>
-                  <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                </div>
-                <a href="#" class="news-link">Читать подробнее</a>
-              </div>
-            </article>
-            <article class="news-card">
-              <div class="news-image">
-                <img src="img/news-card_3.png" alt="Новость">
-              </div>
-              <div class="news-content">
-                <div class="news-text">
-                  <h3 class="news-title">Филармония запускает абонемент для студентов</h3>
-                  <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                </div>
-                <a href="#" class="news-link">Читать подробнее</a>
-              </div>
-            </article>
-            <article class="news-card">
-              <div class="news-image">
-                <img src="img/news-card_1.png" alt="Новость">
-              </div>
-              <div class="news-content">
-                <div class="news-text">
-                  <h3 class="news-title">Филармония запускает абонемент для студентов</h3>
-                  <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                </div>
-                <a href="#" class="news-link">Читать подробнее</a>
-              </div>
-            </article>
-            <article class="news-card">
-              <div class="news-image">
-                <img src="img/news-card_2.png" alt="Новость">
-              </div>
-              <div class="news-content">
-                <div class="news-text">
-                  <h3 class="news-title">Филармония запускает абонемент для студентов</h3>
-                  <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                </div>
-                <a href="#" class="news-link">Читать подробнее</a>
-              </div>
-            </article>
-            <article class="news-card">
-              <div class="news-image">
-                <img src="img/news-card_3.png" alt="Новость">
-              </div>
-              <div class="news-content">
-                <div class="news-text">
-                  <h3 class="news-title">Филармония запускает абонемент для студентов</h3>
-                  <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                </div>
-                <a href="#" class="news-link">Читать подробнее</a>
-              </div>
-            </article>
-            <article class="news-card">
-              <div class="news-image">
-                <img src="img/news-card_1.png" alt="Новость">
-              </div>
-              <div class="news-content">
-                <div class="news-text">
-                  <h3 class="news-title">Филармония запускает абонемент для студентов (Последняя карточка)</h3>
-                  <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                </div>
-                <a href="#" class="news-link">Читать подробнее</a>
-              </div>
-            </article>
-            <!-- Дубликат первой карточки для циклической навигации -->
-            <article class="news-card">
-              <div class="news-image">
-                <img src="img/news-card_1.png" alt="Новость">
-              </div>
-              <div class="news-content">
-                <div class="news-text">
-                  <h3 class="news-title">1. Филармония запускает абонемент для студентов</h3>
-                  <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                </div>
-                <a href="#" class="news-link">Читать подробнее</a>
-              </div>
-            </article>
-          </div>
-          <div class="news-gradient news-gradient--right"></div>
-          <div class="news-gradient news-gradient--left"></div>
-        </div>
-        <div class="news-pagination">
-          <button class="pagination-arrow pagination-arrow--prev" @click="currentPage = currentPage === 1 ? totalPages : currentPage - 1">
-            <img src="img/prev.svg" alt="Предыдущая">
-          </button>
-          <div class="pagination-numbers">
-            <template x-for="page in Math.min(windowWidth > 380 ? 5 : 3, totalPages)" :key="page">
-              <button class="pagination-number" :class="{ active: page === currentPage }" @click="currentPage = page" x-text="page"></button>
-            </template>
-            <template x-if="totalPages > (windowWidth > 380 ? 5 : 3)">
-              <span class="pagination-dots">...</span>
-            </template>
-            <template x-if="totalPages > (windowWidth > 380 ? 5 : 3)">
-              <button class="pagination-number" :class="{ active: totalPages === currentPage }" @click="currentPage = totalPages" x-text="totalPages"></button>
-            </template>
-          </div>
-          <button class="pagination-arrow pagination-arrow--next" @click="currentPage = currentPage === totalPages ? 1 : currentPage + 1">
-            <img src="img/next.svg" alt="Следующая">
-          </button>
-        </div>
+    }" style="margin-bottom: 50px;">
+      <button class="pagination-arrow pagination-arrow--prev" @click="currentPage = currentPage === 1 ? totalPages : currentPage - 1">
+        <img src="img/prev.svg" alt="Предыдущая">
+      </button>
+      <div class="pagination-numbers">
+        <template x-for="page in Math.min(windowWidth > 380 ? 5 : 3, totalPages)" :key="page">
+          <button class="pagination-number" :class="{ active: page === currentPage }" @click="currentPage = page" x-text="page"></button>
+        </template>
+        <template x-if="totalPages > (windowWidth > 380 ? 5 : 3)">
+          <span class="pagination-dots">...</span>
+        </template>
+        <template x-if="totalPages > (windowWidth > 380 ? 5 : 3)">
+          <button class="pagination-number" :class="{ active: totalPages === currentPage }" @click="currentPage = totalPages" x-text="totalPages"></button>
+        </template>
       </div>
-    </section>
-
-    <section class="map" id="map" aria-label="Карта Самары">
-      <div class="container container-margin-top">
-        <div class="section-head">
-          <span class="section-hashtag">#ВсеРядом</span>
-          <h2>События поблизости</h2>
-        </div>
-        <div class="map-embed">
-          <iframe
-            title="Карта Самары"
-            src="https://yandex.ru/map-widget/v1/?ll=50.100193%2C53.195873&z=12"
-                  frameborder="0"
-            allowfullscreen="false"
-          ></iframe>
-        </div>
-      </div>
-    </section>
+      <button class="pagination-arrow pagination-arrow--next" @click="currentPage = currentPage === totalPages ? 1 : currentPage + 1">
+        <img src="img/next.svg" alt="Следующая">
+      </button>
+    </div>
   </main>
-
-  <footer class="site-footer container-margin-top">
+  <footer class="site-footer">
     <div class="footer-content">
       <div class="footer-logo">
         <a href="#" class="brand footer-brand">

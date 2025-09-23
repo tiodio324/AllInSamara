@@ -2431,7 +2431,7 @@ main {
   margin-bottom: 20px;
 }
 
-.search-not-found h2 {
+.search-not-found h2, .categories-list-title {
   font-family: 'TT Nooks Trial', serif;
   font-weight: 400;
   font-size: 72px;
@@ -2468,7 +2468,8 @@ main {
   .section-head h2,
   .main-events .section-head h2,
   .news .section-head h2,
-  .search-not-found h2 {
+  .search-not-found h2,
+  .categories-list-title {
     font-size: 64px;
   }
 
@@ -2517,7 +2518,8 @@ main {
   .section-head h2,
   .main-events .section-head h2,
   .news .section-head h2,
-  .search-not-found h2 {
+  .search-not-found h2,
+  .categories-list-title {
     font-size: 56px;
   }
   
@@ -2978,7 +2980,8 @@ main {
   .section-head h2,
   .main-events .section-head h2,
   .news .section-head h2,
-  .search-not-found h2 {
+  .search-not-found h2,
+  .categories-list-title {
     font-size: 48px;
   }
   
@@ -3216,7 +3219,8 @@ main {
   .section-head h2,
   .main-events .section-head h2,
   .news .section-head h2,
-  .search-not-found h2 {
+  .search-not-found h2,
+  .categories-list-title {
     font-size: 32px;
   }
 
