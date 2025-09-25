@@ -2478,13 +2478,27 @@ main {
   overflow: hidden;
   position: relative;
   background: linear-gradient(180deg, rgba(48, 62, 201, 0.1) 0%, rgba(48, 62, 201, 0.9) 100%);
-  background-image: url('../img/institution-bg.png');
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: flex-end;
   transition: all 0.3s ease;
   cursor: pointer;
+}
+
+.institutions-card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 73%;
+  background-image: url('../img/institution-bg.png');
+  background-size: cover;
+  background-position: center;
+  transition: height 0.3s ease;
+  z-index: 1;
+}
+
+.office-background-image .institutions-card-background {
+  background-image: url('../img/office-bg.png');
 }
 
 .institutions-card-content {
@@ -2497,6 +2511,7 @@ main {
   transition: height 0.3s ease;
   overflow: hidden;
   position: relative;
+  z-index: 2;
 }
 
 .institutions-info {
@@ -3191,6 +3206,10 @@ main {
     height: auto;
     min-height: 27%;
     max-height: 100%;
+  }
+
+  .institutions-card:hover .institutions-card-background {
+    height: 35%;
   }
 }
 
