@@ -2462,6 +2462,195 @@ main {
   gap: 20px;
 }
 
+/* Страница Культурные учреждения */
+.institutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+  justify-items: center;
+}
+
+.institutions-card {
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(180deg, rgba(48, 62, 201, 0.1) 0%, rgba(48, 62, 201, 0.9) 100%);
+  background-image: url('../img/institution-bg.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.institutions-card-content {
+  width: 100%;
+  background: rgba(48, 62, 201, 0.95);
+  backdrop-filter: blur(100px);
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+  height: 27%;
+  transition: height 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.institutions-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+.institutions-title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.institutions-title {
+  display: -webkit-box;
+  display: -moz-box;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.1;
+  color: #FFFFFF;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+}
+
+.institutions-description {
+  display: -webkit-box;
+  display: -moz-box;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+}
+
+.institutions-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.institutions-card:hover .institutions-details {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.institutions-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.institutions-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.institutions-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.institutions-detail-item-double {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.institutions-detail-item-double-contacts {
+  flex-wrap: wrap;
+}
+
+.institutions-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  filter: brightness(0) invert(1);
+}
+
+.institutions-text {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.institutions-tags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.institutions-tag {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #FFFFFF;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.institutions-tag--more {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+}
+
+.institutions-link {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #FFFFFF;
+  opacity: 0.8;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  margin-top: auto;
+  transition: opacity 0.3s ease;
+}
+
+.institutions-link:hover {
+  opacity: 1;
+}
+
+.institutions-link-visible {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
 @media (max-width: 1919px) {
   .container, .search-form-section {
     padding: 0 20px;
@@ -2585,6 +2774,11 @@ main {
   .images-gallery__current-image {
     min-width: calc(100vw - 91px - 20px);
     max-width: calc(100vw - 91px - 20px);
+  }
+
+  /* Страница Культурные учреждения */
+  .institutions-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -2919,14 +3113,40 @@ main {
     gap: 20px;
   }
 
-    /* Страница учреждения */  
-    .images-gallery__thumbnails {
-      max-height: 300px;
-    }
+  /* Страница учреждения */  
+  .images-gallery__thumbnails {
+    max-height: 300px;
+  }
+
+  .images-gallery {
+    height: 300px;
+  }
+
+  /* Страница Культурные учреждения */
+  .institutions-card {
+    width: 100%;
+    height: 500px;
+  }
   
-    .images-gallery {
-      height: 300px;
-    }
+  .institutions-card-content {
+    height: 27%;
+  }
+  
+  .institutions-title {
+    font-size: 20px;
+  }
+  
+  .institutions-description {
+    font-size: 14px;
+  }
+  
+  .institutions-text {
+    font-size: 16px;
+  }
+
+  .institutions-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (min-width: 601px) {
@@ -2960,6 +3180,19 @@ main {
   }
 }
 
+@media (min-width: 641px) {
+  /* Страница Культурные учреждения */
+  .institutions-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .institutions-card:hover .institutions-card-content {
+    height: auto;
+    min-height: 27%;
+    max-height: 100%;
+  }
+}
 
 /* 640px */
 @media (max-width: 640px) {
@@ -3036,6 +3269,11 @@ main {
   /* Страница учреждения */
   .breadcrumb-link, .breadcrumb-current, .service-tag {
     font-size: 12px;
+  }
+
+  /* Страница Культурные учреждения */
+  .institutions-details {
+    display: none;
   }
 }
 
@@ -3173,6 +3411,23 @@ main {
   .institution-contacts {
     flex-direction: column;
     gap: 10px;
+  }
+  
+  /* Страница Культурные учреждения */
+  .institutions-card {
+    height: 415px;
+  }
+
+  .institutions-link-desktop-visible {
+    display: none;
+  }
+
+  .institutions-title {
+    font-size: 18px;
+  }
+  
+  .institutions-description {
+    font-size: 13px;
   }
 }
 
@@ -3321,6 +3576,15 @@ main {
     display: block !important;
     margin-bottom: 30px;
     margin-top: -16px;
+  }
+
+  /* Страница Культурные учреждения */  
+  .institutions-title {
+    font-size: 16px;
+  }
+  
+  .institutions-description {
+    font-size: 12px;
   }
 }
 
