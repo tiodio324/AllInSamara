@@ -2666,6 +2666,50 @@ main {
   left: 20px;
 }
 
+/* Страница Фотоотчет */
+.photo-report-gallery {
+  margin-top: 50px;
+  margin-bottom: 14px;
+}
+
+.photo-report-images-gallery {
+  flex-direction: column-reverse;
+  height: auto;
+}
+
+.photo-report-images-gallery__current-image {
+  min-width: 100%;
+  max-height: 550px;
+}
+
+.photo-report-images-gallery__main {
+  width: 100%;
+  height: auto;
+}
+
+.photo-report-images-gallery__thumbnails {
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 101px;
+  transform: scaleY(-1);
+}
+
+.photo-report-grid {
+  grid-template-columns: repeat(4, 1fr);
+  justify-self: center;
+}
+
+.photo-report-card {
+  flex-shrink: 0;
+  width: 440px;
+  height: 440px;
+  border-radius: 10px;
+  background-image: url('../img/photo-report.png');
+  background-size: cover;
+  background-position: center;
+}
+
 @media (max-width: 1919px) {
   .container, .search-form-section {
     padding: 0 20px;
@@ -2698,6 +2742,15 @@ main {
   .images-gallery__current-image {
     min-width: 666px;
     max-width: 666px;
+  }
+
+  /* Страница Фотоотчет */
+  .photo-report-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .photo-report-card {
+    width: 360px;
   }
 }
 
@@ -2794,6 +2847,12 @@ main {
   /* Страница Культурные учреждения */
   .institutions-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Страница Фотоотчет */
+  .photo-report-card {
+    width: 280px;
+    height: 385px;
   }
 }
 
@@ -3472,6 +3531,10 @@ main {
   .images-gallery__current {
     height: 300px;
     width: 100%;
+  }
+
+  .photo-report-images-gallery .images-gallery__current {
+    height: auto;
   }
 
   .images-gallery__current-image {
