@@ -2640,6 +2640,7 @@ main {
 .institutions-tag--more {
   background: rgba(255, 255, 255, 0.15);
   border: none;
+  cursor: pointer;
 }
 
 .institutions-link {
