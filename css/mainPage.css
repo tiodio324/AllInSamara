@@ -1824,8 +1824,8 @@ main {
 
 .news-content {
   background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(100px);
-  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -2472,7 +2472,7 @@ main {
 
 .institutions-card {
   width: 100%;
-  height: 500px;
+  min-height: 500px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -2500,13 +2500,17 @@ main {
   background-image: url('../img/office-bg.png');
 }
 
+.news-background-image .institutions-card-background {
+  background-image: url('../img/news-bg.png');
+}
+
 .institutions-card-content {
   width: 100%;
   background: rgba(48, 62, 201, 0.95);
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(50px);
   padding: 20px;
   border-radius: 0 0 10px 10px;
-  height: 27%;
+  min-height: 27%;
   transition: height 0.3s ease;
   overflow: hidden;
   position: relative;
@@ -2708,6 +2712,16 @@ main {
   background-image: url('../img/photo-report.png');
   background-size: cover;
   background-position: center;
+}
+
+/* Страница Новости */
+.news-card-content {
+  min-height: 27%;
+}
+
+.news-list-bg-card:hover .institutions-details {
+  opacity: 0;
+  transform: translateY(10px);
 }
 
 @media (max-width: 1919px) {
@@ -3199,11 +3213,11 @@ main {
   /* Страница Культурные учреждения */
   .institutions-card {
     width: 100%;
-    height: 500px;
+    min-height: 500px;
   }
   
   .institutions-card-content {
-    height: 27%;
+    min-height: 27%;
   }
   
   .institutions-title {
@@ -3220,6 +3234,11 @@ main {
 
   .institutions-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Страница Новости */
+  .news-card-content {
+    min-height: 27%;
   }
 }
 
@@ -3261,6 +3280,14 @@ main {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   }
 
+  .institutions-card .institutions-details {
+    height: 0;
+  }
+
+  .institutions-card:hover .institutions-details {
+    height: auto;
+  }
+
   .institutions-card:hover .institutions-card-content {
     height: auto;
     min-height: 27%;
@@ -3269,6 +3296,17 @@ main {
 
   .institutions-card:hover .institutions-card-background {
     height: 35%;
+  }
+
+  /* Страница Новости */
+  .news-list-bg-card:hover .institutions-card-content {
+    height: auto;
+    min-height: auto;
+    max-height: none;
+  }
+
+  .news-list-bg-card:hover .institutions-card-background {
+    height: 73%;
   }
 }
 
@@ -3493,11 +3531,7 @@ main {
   
   /* Страница Культурные учреждения */
   .institutions-card {
-    height: 415px;
-  }
-
-  .institutions-link-desktop-visible {
-    display: none;
+    min-height: 415px;
   }
 
   .institutions-title {

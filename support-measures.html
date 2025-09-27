@@ -144,11 +144,11 @@
         <div class="breadcrumbs-list">
           <a href="index.html" class="breadcrumb-link">Главная</a>
           <span class="breadcrumb-separator"></span>
-          <span class="breadcrumb-current">Проектные офисы</span>
+          <span class="breadcrumb-current">Меры поддержки</span>
         </div>
       </div>
 
-      <h2 class="categories-list-title">Проектные офисы</h2>
+      <h2 class="categories-list-title">Меры поддержки</h2>
     </section>
 
     <section class="main-events" id="main-events" x-data="{
@@ -320,489 +320,111 @@
           }
         }">
           <div class="institutions-grid institutions-grid-section" x-ref="grid">
-            <article
-              class="institutions-card office-background-image"
-              x-data="{ hover: false }"
-              @mouseenter="hover = true"
-              @mouseleave="hover = false"
-              onclick="window.location.href='office-card.html'"
-            >
+            <article class="institutions-card news-list-bg-card news-background-image" onclick="window.location.href='news-card.html'">
               <div class="institutions-card-background"></div>
-              <div class="institutions-card-content">
+              <div class="institutions-card-content news-card-content">
                 <div class="institutions-info">
                   <div class="institutions-title-section">
-                    <h3 class="institutions-title">Заголовок</h3>
-                    <p class="institutions-description">Краткое описание</p>
-                    <a href="#" class="institutions-link institutions-link-visible" x-show="!hover">Узнать подробнее</a>
+                    <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
+                    <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <a href="news-card.html" class="institutions-link">Узнать подробнее</a>
                   </div>
-                  <div class="institutions-details">
-                    <div class="institutions-schedule">
-                      <div class="institutions-detail-item">
-                        <img src="img/clock-icon.svg" alt="Время работы" class="institutions-icon">
-                        <span class="institutions-text">Понедельник — пятница: 10:00 – 20:00<br>Суббота — воскресенье: 12:00 – 22:00</span>
-                      </div>
-                    </div>
-                    <div class="institutions-contact-info">
-                      <div class="institutions-detail-item-double institutions-detail-item-double-contacts">
-                        <div class="institutions-detail-item">
-                          <img src="img/location-icon.svg" alt="Адрес" class="institutions-icon">
-                          <span class="institutions-text">г. Самара, ул. Тверская, 23</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">Телефон: +7 (495) 123-45-67</span>
-                        </div>
-                      </div>
-                      <div class="institutions-detail-item-double">
-                        <div class="institutions-detail-item">
-                          <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="institutions-tags">
-                      <span class="institutions-tag">Организация выставок</span>
-                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
-                    </div>
-                  </div>
-                  <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
                 </div>
               </div>
             </article>
-            <article
-              class="institutions-card office-background-image"
-              x-data="{ hover: false }"
-              @mouseenter="hover = true"
-              @mouseleave="hover = false"
-              onclick="window.location.href='office-card.html'"
-            >
+            <article class="institutions-card news-list-bg-card news-background-image" onclick="window.location.href='news-card.html'">
               <div class="institutions-card-background"></div>
-              <div class="institutions-card-content">
+              <div class="institutions-card-content news-card-content">
                 <div class="institutions-info">
                   <div class="institutions-title-section">
-                    <h3 class="institutions-title">Заголовок</h3>
-                    <p class="institutions-description">Краткое описание</p>
-                    <a href="#" class="institutions-link institutions-link-visible" x-show="!hover">Узнать подробнее</a>
+                    <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
+                    <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <a href="news-card.html" class="institutions-link">Узнать подробнее</a>
                   </div>
-                  <div class="institutions-details">
-                    <div class="institutions-schedule">
-                      <div class="institutions-detail-item">
-                        <img src="img/clock-icon.svg" alt="Время работы" class="institutions-icon">
-                        <span class="institutions-text">Понедельник — пятница: 10:00 – 20:00<br>Суббота — воскресенье: 12:00 – 22:00</span>
-                      </div>
-                    </div>
-                    <div class="institutions-contact-info">
-                      <div class="institutions-detail-item-double institutions-detail-item-double-contacts">
-                        <div class="institutions-detail-item">
-                          <img src="img/location-icon.svg" alt="Адрес" class="institutions-icon">
-                          <span class="institutions-text">г. Самара, ул. Тверская, 23</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">Телефон: +7 (495) 123-45-67</span>
-                        </div>
-                      </div>
-                      <div class="institutions-detail-item-double">
-                        <div class="institutions-detail-item">
-                          <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="institutions-tags">
-                      <span class="institutions-tag">Организация выставок</span>
-                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
-                    </div>
-                  </div>
-                  <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
                 </div>
               </div>
             </article>
-            <article
-              class="institutions-card office-background-image"
-              x-data="{ hover: false }"
-              @mouseenter="hover = true"
-              @mouseleave="hover = false"
-              onclick="window.location.href='office-card.html'"
-            >
+            <article class="institutions-card news-list-bg-card news-background-image" onclick="window.location.href='news-card.html'">
               <div class="institutions-card-background"></div>
-              <div class="institutions-card-content">
+              <div class="institutions-card-content news-card-content">
                 <div class="institutions-info">
                   <div class="institutions-title-section">
-                    <h3 class="institutions-title">Заголовок</h3>
-                    <p class="institutions-description">Краткое описание</p>
-                    <a href="#" class="institutions-link institutions-link-visible" x-show="!hover">Узнать подробнее</a>
+                    <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
+                    <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <a href="news-card.html" class="institutions-link">Узнать подробнее</a>
                   </div>
-                  <div class="institutions-details">
-                    <div class="institutions-schedule">
-                      <div class="institutions-detail-item">
-                        <img src="img/clock-icon.svg" alt="Время работы" class="institutions-icon">
-                        <span class="institutions-text">Понедельник — пятница: 10:00 – 20:00<br>Суббота — воскресенье: 12:00 – 22:00</span>
-                      </div>
-                    </div>
-                    <div class="institutions-contact-info">
-                      <div class="institutions-detail-item-double institutions-detail-item-double-contacts">
-                        <div class="institutions-detail-item">
-                          <img src="img/location-icon.svg" alt="Адрес" class="institutions-icon">
-                          <span class="institutions-text">г. Самара, ул. Тверская, 23</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">Телефон: +7 (495) 123-45-67</span>
-                        </div>
-                      </div>
-                      <div class="institutions-detail-item-double">
-                        <div class="institutions-detail-item">
-                          <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="institutions-tags">
-                      <span class="institutions-tag">Организация выставок</span>
-                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
-                    </div>
-                  </div>
-                  <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
                 </div>
               </div>
             </article>
-            <article
-              class="institutions-card office-background-image"
-              x-data="{ hover: false }"
-              @mouseenter="hover = true"
-              @mouseleave="hover = false"
-              onclick="window.location.href='office-card.html'"
-            >
+            <article class="institutions-card news-list-bg-card news-background-image" onclick="window.location.href='news-card.html'">
               <div class="institutions-card-background"></div>
-              <div class="institutions-card-content">
+              <div class="institutions-card-content news-card-content">
                 <div class="institutions-info">
                   <div class="institutions-title-section">
-                    <h3 class="institutions-title">Заголовок</h3>
-                    <p class="institutions-description">Краткое описание</p>
-                    <a href="#" class="institutions-link institutions-link-visible" x-show="!hover">Узнать подробнее</a>
+                    <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
+                    <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <a href="news-card.html" class="institutions-link">Узнать подробнее</a>
                   </div>
-                  <div class="institutions-details">
-                    <div class="institutions-schedule">
-                      <div class="institutions-detail-item">
-                        <img src="img/clock-icon.svg" alt="Время работы" class="institutions-icon">
-                        <span class="institutions-text">Понедельник — пятница: 10:00 – 20:00<br>Суббота — воскресенье: 12:00 – 22:00</span>
-                      </div>
-                    </div>
-                    <div class="institutions-contact-info">
-                      <div class="institutions-detail-item-double institutions-detail-item-double-contacts">
-                        <div class="institutions-detail-item">
-                          <img src="img/location-icon.svg" alt="Адрес" class="institutions-icon">
-                          <span class="institutions-text">г. Самара, ул. Тверская, 23</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">Телефон: +7 (495) 123-45-67</span>
-                        </div>
-                      </div>
-                      <div class="institutions-detail-item-double">
-                        <div class="institutions-detail-item">
-                          <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="institutions-tags">
-                      <span class="institutions-tag">Организация выставок</span>
-                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
-                    </div>
-                  </div>
-                  <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
                 </div>
               </div>
             </article>
-            <article
-              class="institutions-card office-background-image"
-              x-data="{ hover: false }"
-              @mouseenter="hover = true"
-              @mouseleave="hover = false"
-              onclick="window.location.href='office-card.html'"
-            >
+            <article class="institutions-card news-list-bg-card news-background-image" onclick="window.location.href='news-card.html'">
               <div class="institutions-card-background"></div>
-              <div class="institutions-card-content">
+              <div class="institutions-card-content news-card-content">
                 <div class="institutions-info">
                   <div class="institutions-title-section">
-                    <h3 class="institutions-title">Заголовок</h3>
-                    <p class="institutions-description">Краткое описание</p>
-                    <a href="#" class="institutions-link institutions-link-visible" x-show="!hover">Узнать подробнее</a>
+                    <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
+                    <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <a href="news-card.html" class="institutions-link">Узнать подробнее</a>
                   </div>
-                  <div class="institutions-details">
-                    <div class="institutions-schedule">
-                      <div class="institutions-detail-item">
-                        <img src="img/clock-icon.svg" alt="Время работы" class="institutions-icon">
-                        <span class="institutions-text">Понедельник — пятница: 10:00 – 20:00<br>Суббота — воскресенье: 12:00 – 22:00</span>
-                      </div>
-                    </div>
-                    <div class="institutions-contact-info">
-                      <div class="institutions-detail-item-double institutions-detail-item-double-contacts">
-                        <div class="institutions-detail-item">
-                          <img src="img/location-icon.svg" alt="Адрес" class="institutions-icon">
-                          <span class="institutions-text">г. Самара, ул. Тверская, 23</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">Телефон: +7 (495) 123-45-67</span>
-                        </div>
-                      </div>
-                      <div class="institutions-detail-item-double">
-                        <div class="institutions-detail-item">
-                          <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="institutions-tags">
-                      <span class="institutions-tag">Организация выставок</span>
-                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
-                    </div>
-                  </div>
-                  <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
                 </div>
               </div>
             </article>
-            <article
-              class="institutions-card office-background-image"
-              x-data="{ hover: false }"
-              @mouseenter="hover = true"
-              @mouseleave="hover = false"
-              onclick="window.location.href='office-card.html'"
-            >
+            <article class="institutions-card news-list-bg-card news-background-image" onclick="window.location.href='news-card.html'">
               <div class="institutions-card-background"></div>
-              <div class="institutions-card-content">
+              <div class="institutions-card-content news-card-content">
                 <div class="institutions-info">
                   <div class="institutions-title-section">
-                    <h3 class="institutions-title">Заголовок</h3>
-                    <p class="institutions-description">Краткое описание</p>
-                    <a href="#" class="institutions-link institutions-link-visible" x-show="!hover">Узнать подробнее</a>
+                    <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
+                    <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <a href="news-card.html" class="institutions-link">Узнать подробнее</a>
                   </div>
-                  <div class="institutions-details">
-                    <div class="institutions-schedule">
-                      <div class="institutions-detail-item">
-                        <img src="img/clock-icon.svg" alt="Время работы" class="institutions-icon">
-                        <span class="institutions-text">Понедельник — пятница: 10:00 – 20:00<br>Суббота — воскресенье: 12:00 – 22:00</span>
-                      </div>
-                    </div>
-                    <div class="institutions-contact-info">
-                      <div class="institutions-detail-item-double institutions-detail-item-double-contacts">
-                        <div class="institutions-detail-item">
-                          <img src="img/location-icon.svg" alt="Адрес" class="institutions-icon">
-                          <span class="institutions-text">г. Самара, ул. Тверская, 23</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">Телефон: +7 (495) 123-45-67</span>
-                        </div>
-                      </div>
-                      <div class="institutions-detail-item-double">
-                        <div class="institutions-detail-item">
-                          <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="institutions-tags">
-                      <span class="institutions-tag">Организация выставок</span>
-                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
-                    </div>
-                  </div>
-                  <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
                 </div>
               </div>
             </article>
-            <article
-              class="institutions-card office-background-image"
-              x-data="{ hover: false }"
-              @mouseenter="hover = true"
-              @mouseleave="hover = false"
-              onclick="window.location.href='office-card.html'"
-            >
+            <article class="institutions-card news-list-bg-card news-background-image" onclick="window.location.href='news-card.html'">
               <div class="institutions-card-background"></div>
-              <div class="institutions-card-content">
+              <div class="institutions-card-content news-card-content">
                 <div class="institutions-info">
                   <div class="institutions-title-section">
-                    <h3 class="institutions-title">Заголовок</h3>
-                    <p class="institutions-description">Краткое описание</p>
-                    <a href="#" class="institutions-link institutions-link-visible" x-show="!hover">Узнать подробнее</a>
+                    <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
+                    <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <a href="news-card.html" class="institutions-link">Узнать подробнее</a>
                   </div>
-                  <div class="institutions-details">
-                    <div class="institutions-schedule">
-                      <div class="institutions-detail-item">
-                        <img src="img/clock-icon.svg" alt="Время работы" class="institutions-icon">
-                        <span class="institutions-text">Понедельник — пятница: 10:00 – 20:00<br>Суббота — воскресенье: 12:00 – 22:00</span>
-                      </div>
-                    </div>
-                    <div class="institutions-contact-info">
-                      <div class="institutions-detail-item-double institutions-detail-item-double-contacts">
-                        <div class="institutions-detail-item">
-                          <img src="img/location-icon.svg" alt="Адрес" class="institutions-icon">
-                          <span class="institutions-text">г. Самара, ул. Тверская, 23</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">Телефон: +7 (495) 123-45-67</span>
-                        </div>
-                      </div>
-                      <div class="institutions-detail-item-double">
-                        <div class="institutions-detail-item">
-                          <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="institutions-tags">
-                      <span class="institutions-tag">Организация выставок</span>
-                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
-                    </div>
-                  </div>
-                  <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
                 </div>
               </div>
             </article>
-            <article
-              class="institutions-card office-background-image"
-              x-data="{ hover: false }"
-              @mouseenter="hover = true"
-              @mouseleave="hover = false"
-              onclick="window.location.href='office-card.html'"
-            >
+            <article class="institutions-card news-list-bg-card news-background-image" onclick="window.location.href='news-card.html'">
               <div class="institutions-card-background"></div>
-              <div class="institutions-card-content">
+              <div class="institutions-card-content news-card-content">
                 <div class="institutions-info">
                   <div class="institutions-title-section">
-                    <h3 class="institutions-title">Заголовок</h3>
-                    <p class="institutions-description">Краткое описание</p>
-                    <a href="#" class="institutions-link institutions-link-visible" x-show="!hover">Узнать подробнее</a>
+                    <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
+                    <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <a href="news-card.html" class="institutions-link">Узнать подробнее</a>
                   </div>
-                  <div class="institutions-details">
-                    <div class="institutions-schedule">
-                      <div class="institutions-detail-item">
-                        <img src="img/clock-icon.svg" alt="Время работы" class="institutions-icon">
-                        <span class="institutions-text">Понедельник — пятница: 10:00 – 20:00<br>Суббота — воскресенье: 12:00 – 22:00</span>
-                      </div>
-                    </div>
-                    <div class="institutions-contact-info">
-                      <div class="institutions-detail-item-double institutions-detail-item-double-contacts">
-                        <div class="institutions-detail-item">
-                          <img src="img/location-icon.svg" alt="Адрес" class="institutions-icon">
-                          <span class="institutions-text">г. Самара, ул. Тверская, 23</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">Телефон: +7 (495) 123-45-67</span>
-                        </div>
-                      </div>
-                      <div class="institutions-detail-item-double">
-                        <div class="institutions-detail-item">
-                          <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="institutions-tags">
-                      <span class="institutions-tag">Организация выставок</span>
-                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
-                    </div>
-                  </div>
-                  <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
                 </div>
               </div>
             </article>
-            <article
-              class="institutions-card office-background-image"
-              x-data="{ hover: false }"
-              @mouseenter="hover = true"
-              @mouseleave="hover = false"
-              onclick="window.location.href='office-card.html'"
-            >
+            <article class="institutions-card news-list-bg-card news-background-image" onclick="window.location.href='news-card.html'">
               <div class="institutions-card-background"></div>
-              <div class="institutions-card-content">
+              <div class="institutions-card-content news-card-content">
                 <div class="institutions-info">
                   <div class="institutions-title-section">
-                    <h3 class="institutions-title">Заголовок</h3>
-                    <p class="institutions-description">Краткое описание</p>
-                    <a href="#" class="institutions-link institutions-link-visible" x-show="!hover">Узнать подробнее</a>
+                    <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
+                    <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <a href="news-card.html" class="institutions-link">Узнать подробнее</a>
                   </div>
-                  <div class="institutions-details">
-                    <div class="institutions-schedule">
-                      <div class="institutions-detail-item">
-                        <img src="img/clock-icon.svg" alt="Время работы" class="institutions-icon">
-                        <span class="institutions-text">Понедельник — пятница: 10:00 – 20:00<br>Суббота — воскресенье: 12:00 – 22:00</span>
-                      </div>
-                    </div>
-                    <div class="institutions-contact-info">
-                      <div class="institutions-detail-item-double institutions-detail-item-double-contacts">
-                        <div class="institutions-detail-item">
-                          <img src="img/location-icon.svg" alt="Адрес" class="institutions-icon">
-                          <span class="institutions-text">г. Самара, ул. Тверская, 23</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">Телефон: +7 (495) 123-45-67</span>
-                        </div>
-                      </div>
-                      <div class="institutions-detail-item-double">
-                        <div class="institutions-detail-item">
-                          <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
-                        </div>
-                        <div class="institutions-detail-item">
-                          <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="institutions-tags">
-                      <span class="institutions-tag">Организация выставок</span>
-                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
-                    </div>
-                  </div>
-                  <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
                 </div>
               </div>
             </article>
