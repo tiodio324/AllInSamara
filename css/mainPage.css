@@ -2794,6 +2794,23 @@ main {
   color: #303EC9;
 }
 
+/* Страница Авторская статья */
+.article-container {
+  max-width: 1200px;
+}
+
+.article-contact-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.article-share-item {
+  margin: 0;
+}
+
 @media (max-width: 1919px) {
   .container, .search-form-section {
     padding: 0 20px;
