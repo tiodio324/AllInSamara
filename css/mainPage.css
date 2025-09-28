@@ -2778,11 +2778,12 @@ main {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 20px;
 }
 
 .news-share-item {
   cursor: pointer;
+  width: fit-content;
   padding: 12px 20px;
   border-radius: 10px;
   background-color: rgba(48, 62, 201, 0.15);
@@ -2852,6 +2853,13 @@ main {
     padding-right: 0;
     min-width: 24px;
     min-height: 24px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .news-card-images-gallery__current-image {
+    min-width: 560px;
+    max-width: 560px;
   }
 }
 
@@ -3612,6 +3620,17 @@ main {
   }
 }
 
+@media (min-width: 421px) {
+  /* Страница Карточка Новости */
+  .news-share-item-mobile {
+    display: none;
+  }
+
+  .news-share-item-desktop {
+    display: flex;
+  }
+}
+
 @media (max-width: 420px) {
   /* Страница учреждения */
   .images-gallery {
@@ -3645,6 +3664,15 @@ main {
     height: 100%;
     min-width: auto;
     max-width: none;
+  }
+
+  /* Страница Карточка Новости */
+  .news-share-item-mobile {
+    display: flex;
+  }
+
+  .news-share-item-desktop {
+    display: none;
   }
 }
 
@@ -3770,6 +3798,12 @@ main {
   
   .institutions-description {
     font-size: 12px;
+  }
+
+  /* Страница Карточка Новости */
+  .news-share-item {
+    width: 100%;
+    justify-content: center;
   }
 }
 
