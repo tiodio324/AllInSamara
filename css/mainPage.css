@@ -2756,6 +2756,7 @@ main {
   border: none;
   outline: none;
   background: transparent;
+  padding-right: 10px;
 }
 
 .news-card-article-text::-webkit-scrollbar {
