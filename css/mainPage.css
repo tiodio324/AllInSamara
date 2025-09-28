@@ -2477,7 +2477,7 @@ main {
 
 .institutions-card {
   width: 100%;
-  min-height: 500px;
+  min-height: 650px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -2493,7 +2493,7 @@ main {
   top: 0;
   left: 0;
   width: 100%;
-  height: 73%;
+  height: 80%;
   background-image: url('../img/institution-bg.png');
   background-size: cover;
   background-position: center;
@@ -2517,7 +2517,7 @@ main {
   backdrop-filter: blur(50px);
   padding: 20px;
   border-radius: 0 0 10px 10px;
-  min-height: 27%;
+  min-height: 20%;
   transition: height 0.3s ease;
   overflow: hidden;
   position: relative;
@@ -2877,6 +2877,19 @@ main {
   .images-gallery__current-image {
     min-width: 666px;
     max-width: 666px;
+  }
+
+  /* Страница Культурные учреждения */
+  .institutions-card-background {
+    height: 73%;
+  }
+
+  .institutions-card {
+    min-height: 500px;
+  }
+
+  .institutions-card-content {
+    min-height: 27%;
   }
 
   /* Страница Фотоотчет */
@@ -3423,7 +3436,7 @@ main {
   }
 
   .institutions-card:hover .institutions-card-background {
-    height: 35%;
+    height: 55%;
   }
 
   /* Страница Новости */
