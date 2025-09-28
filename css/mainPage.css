@@ -2790,6 +2790,10 @@ main {
   margin-bottom: -12px;
 }
 
+.news-share-item:hover {
+  background-color: rgba(48, 62, 201, 0.25);
+}
+
 .news-share-item .news-share-text {
   color: #303EC9;
 }
