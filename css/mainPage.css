@@ -746,7 +746,7 @@ main {
 .event-card {
   flex-shrink: 0;
   width: 440px;
-  height: 440px;
+  max-height: 440px;
   border-radius: 4px;
   overflow: hidden;
   display: flex;
