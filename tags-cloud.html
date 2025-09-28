@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ru" x-data="{ mobileMenuOpen: false }" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Language" content="ru">
+  <meta http-equiv="Cache-Control" content="public, max-age=3600">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="title" content="Самарский культурный навигатор">
+  <meta name="description" content="Самарский культурный навигатор — афиша, события, музеи, театры и культурные маршруты Самары и области.">
+  <meta name="application-name" content="Самарский культурный навигатор">
+  <link rel="canonical" href="/">
+  <title>Самарский культурный навигатор</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Самарский культурный навигатор">
+  <meta property="og:description" content="Афиша, места и культурные маршруты Самары и области.">
+  <meta property="og:url" content="/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/mainPage.css">
+  <link rel="stylesheet" href="css/headerBluePages.css">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand header-brand">
+        <img src="img/logo_horizontal.svg" alt="Логотип" class="brand-mark">
+      </a>
+
+      <div x-data="{ 
+        supportOpen: false, 
+        eventsOpen: false, 
+        placesOpen: false, 
+        newsOpen: false,
+        mobileMenuOpen: false,
+        isDesktop: window.innerWidth > 1124,
+        isLargeScreen: window.innerWidth > 1400,
+        init() {
+          window.addEventListener('resize', () => {
+            this.isDesktop = window.innerWidth > 1124;
+            this.isLargeScreen = window.innerWidth > 1400;
+            if (this.isDesktop) {
+              this.mobileMenuOpen = false;
+            }
+          });
+        }
+      }">
+        <nav class="header-nav" x-show="mobileMenuOpen || isDesktop" x-transition>
+        <div class="nav-links">
+          <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
+            <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
+              <span class="nav-text">Поддержка</span>
+              <img :src="open ? 'img/arrow-up-black.svg' : 'img/arrow-down-black.svg'" alt="Стрелка" class="nav-arrow">
+            </button>
+            <div class="nav-dropdown" x-show="open" x-transition>
+              <ul class="dropdown-list">
+                <li><a href="#support1" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#support2" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#support3" class="dropdown-link">Страница списка</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
+            <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
+              <span class="nav-text">Мероприятия</span>
+              <img :src="open ? 'img/arrow-up-black.svg' : 'img/arrow-down-black.svg'" alt="Стрелка" class="nav-arrow">
+            </button>
+            <div class="nav-dropdown" x-show="open" x-transition>
+              <ul class="dropdown-list">
+                <li><a href="#events1" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#events2" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#events3" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#events4" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#events5" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#events6" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#events7" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#events8" class="dropdown-link">Страница списка</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
+            <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
+              <span class="nav-text">Учреждения</span>
+              <img :src="open ? 'img/arrow-up-black.svg' : 'img/arrow-down-black.svg'" alt="Стрелка" class="nav-arrow">
+            </button>
+            <div class="nav-dropdown" x-show="open" x-transition>
+              <ul class="dropdown-list">
+                <li><a href="institutions.html" class="dropdown-link">Созвездие</a></li>
+                <li><a href="#places2" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#places3" class="dropdown-link">Страница списка</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
+            <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
+              <span class="nav-text">Новости</span>
+              <img :src="open ? 'img/arrow-up-black.svg' : 'img/arrow-down-black.svg'" alt="Стрелка" class="nav-arrow">
+            </button>
+            <div class="nav-dropdown" x-show="open" x-transition>
+              <ul class="dropdown-list">
+                <li><a href="#news1" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#news2" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#news3" class="dropdown-link">Страница списка</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <a href="photo-report.html" class="nav-link nav-toggle nav-link--no-dropdown">Фотоотчеты</a>
+        </div>
+      </nav>
+      <form class="nav-search" x-data="{ searchOpen: false }" role="search" aria-label="Поиск по сайту" action="search_empty.html" method="get">
+        <div class="search-input-wrapper">
+          <img :src="isLargeScreen ? 'img/search-header-black.svg' : 'img/search-header-white.svg'" alt="Поиск" class="search-icon" onclick="window.location.href='search_empty.html';">
+          <input id="site-search" name="site-search" type="search" placeholder="Поиск по сайту" class="search-input" autocomplete="off" >
+        </div>
+      </form>
+      <button class="btn-blind-icon" type="button" aria-label="Показать/скрыть">
+        <img src="img/blind-eye.svg" alt="Слепой режим">
+      </button>
+      <button class="mobile-menu-toggle" type="button" @click="mobileMenuOpen = !mobileMenuOpen">
+        <img src="img/btn-menu-toggle.svg" alt="Меню">
+      </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="search-form-section">
+      <!-- Хлебные крошки -->
+      <div class="breadcrumbs tags-cloud-breadcrumbs">
+        <div class="breadcrumbs-list">
+          <a href="index.html" class="breadcrumb-link">Главная</a>
+          <span class="breadcrumb-separator"></span>
+          <span class="breadcrumb-current">Страница облако тегов</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-events" style="padding: 0;">
+      <div class="container">
+        <div class="events-filter tags-cloud-filter" style="padding: 0;">
+          <div class="filter-left tags-cloud-filter-center" x-data="{
+            hasActiveTags: false,
+            toggleAllTags(event) {
+              const button = event.target;
+              button.classList.toggle('active');
+              
+              if (button.classList.contains('active')) {
+                const parentContainer = button.closest('div').parentElement;
+                const otherTags = parentContainer.querySelectorAll('.filter-tag-extended:not(.filter-tag-extended-all)');
+                otherTags.forEach(tag => tag.classList.remove('active'));
+              }
+              this.hasActiveTags = button.classList.contains('active');
+            },
+            toggleTag(event) {
+              const button = event.target;
+              button.classList.toggle('active');
+              
+              if (button.classList.contains('active')) {
+                const parentContainer = button.closest('div').parentElement;
+                const allTagsButtons = parentContainer.querySelectorAll('.filter-tag-extended-all');
+                allTagsButtons.forEach(allButton => allButton.classList.remove('active'));
+              }
+              
+              const parentContainer = button.closest('div').parentElement;
+              const activeTags = parentContainer.querySelectorAll('.filter-tag-extended.active');
+              if (activeTags.length === 0) {
+                this.hasActiveTags = button.classList.contains('active');
+              } else {
+                this.hasActiveTags = true;
+              }
+            }
+          }">
+            <span class="section-hashtag">Категория тега</span>
+
+            <div>
+              <div class="filter-tags-extended">
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended filter-tag-extended-desktop filter-tag-extended-all" @click="toggleAllTags($event)">Все теги</button>
+              </div>
+              <div class="filter-tag-center">
+                <button class="filter-tag-extended filter-tag-extended-mobile filter-tag-extended-all" @click="toggleAllTags($event)">Все теги</button>
+              </div>
+            </div>
+
+            <button type="button" class="search-button" x-show="hasActiveTags">Перейти</button>
+          </div>
+        </div>
+
+        <div class="events-filter tags-cloud-filter" style="padding: 0;">
+          <div class="filter-left tags-cloud-filter-center" x-data="{ 
+            hasActiveTags: false,
+            toggleAllTags(event) {
+              const button = event.target;
+              button.classList.toggle('active');
+              
+              if (button.classList.contains('active')) {
+                const parentContainer = button.closest('div').parentElement;
+                const otherTags = parentContainer.querySelectorAll('.filter-tag-extended:not(.filter-tag-extended-all)');
+                otherTags.forEach(tag => tag.classList.remove('active'));
+              }
+              this.hasActiveTags = button.classList.contains('active');
+            },
+            toggleTag(event) {
+              const button = event.target;
+              button.classList.toggle('active');
+              
+              if (button.classList.contains('active')) {
+                const parentContainer = button.closest('div').parentElement;
+                const allTagsButtons = parentContainer.querySelectorAll('.filter-tag-extended-all');
+                allTagsButtons.forEach(allButton => allButton.classList.remove('active'));
+              }
+              
+              const parentContainer = button.closest('div').parentElement;
+              const activeTags = parentContainer.querySelectorAll('.filter-tag-extended.active');
+              if (activeTags.length === 0) {
+                this.hasActiveTags = button.classList.contains('active');
+              } else {
+                this.hasActiveTags = true;
+              }
+            }
+          }">
+            <span class="section-hashtag">Категория тега</span>
+
+            <div>
+              <div class="filter-tags-extended">
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended filter-tag-extended-desktop filter-tag-extended-all" @click="toggleAllTags($event)">Все теги</button>
+              </div>
+              <div class="filter-tag-center">
+                <button class="filter-tag-extended filter-tag-extended-mobile filter-tag-extended-all" @click="toggleAllTags($event)">Все теги</button>
+              </div>
+            </div>
+
+            <button type="button" class="search-button" x-show="hasActiveTags">Перейти</button>
+          </div>
+        </div>
+
+        <div class="events-filter tags-cloud-filter" style="padding: 0;">
+          <div class="filter-left tags-cloud-filter-center" x-data="{ 
+            hasActiveTags: false,
+            toggleAllTags(event) {
+              const button = event.target;
+              button.classList.toggle('active');
+              
+              if (button.classList.contains('active')) {
+                const parentContainer = button.closest('div').parentElement;
+                const otherTags = parentContainer.querySelectorAll('.filter-tag-extended:not(.filter-tag-extended-all)');
+                otherTags.forEach(tag => tag.classList.remove('active'));
+              }
+              this.hasActiveTags = button.classList.contains('active');
+            },
+            toggleTag(event) {
+              const button = event.target;
+              button.classList.toggle('active');
+              
+              if (button.classList.contains('active')) {
+                const parentContainer = button.closest('div').parentElement;
+                const allTagsButtons = parentContainer.querySelectorAll('.filter-tag-extended-all');
+                allTagsButtons.forEach(allButton => allButton.classList.remove('active'));
+              }
+              
+              const parentContainer = button.closest('div').parentElement;
+              const activeTags = parentContainer.querySelectorAll('.filter-tag-extended.active');
+              if (activeTags.length === 0) {
+                this.hasActiveTags = button.classList.contains('active');
+              } else {
+                this.hasActiveTags = true;
+              }
+            }
+          }">
+            <span class="section-hashtag">Категория тега</span>
+
+            <div>
+              <div class="filter-tags-extended">
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended filter-tag-extended-desktop filter-tag-extended-all" @click="toggleAllTags($event)">Все теги</button>
+              </div>
+              <div class="filter-tag-center">
+                <button class="filter-tag-extended filter-tag-extended-mobile filter-tag-extended-all" @click="toggleAllTags($event)">Все теги</button>
+              </div>
+            </div>
+
+            <button type="button" class="search-button" x-show="hasActiveTags">Перейти</button>
+          </div>
+        </div>
+
+        <div class="events-filter tags-cloud-filter" style="padding: 0;">
+          <div class="filter-left tags-cloud-filter-center" x-data="{ 
+            hasActiveTags: false,
+            toggleAllTags(event) {
+              const button = event.target;
+              button.classList.toggle('active');
+              
+              if (button.classList.contains('active')) {
+                const parentContainer = button.closest('div').parentElement;
+                const otherTags = parentContainer.querySelectorAll('.filter-tag-extended:not(.filter-tag-extended-all)');
+                otherTags.forEach(tag => tag.classList.remove('active'));
+              }
+              this.hasActiveTags = button.classList.contains('active');
+            },
+            toggleTag(event) {
+              const button = event.target;
+              button.classList.toggle('active');
+              
+              if (button.classList.contains('active')) {
+                const parentContainer = button.closest('div').parentElement;
+                const allTagsButtons = parentContainer.querySelectorAll('.filter-tag-extended-all');
+                allTagsButtons.forEach(allButton => allButton.classList.remove('active'));
+              }
+              
+              const parentContainer = button.closest('div').parentElement;
+              const activeTags = parentContainer.querySelectorAll('.filter-tag-extended.active');
+              if (activeTags.length === 0) {
+                this.hasActiveTags = button.classList.contains('active');
+              } else {
+                this.hasActiveTags = true;
+              }
+            }
+          }">
+            <span class="section-hashtag">Категория тега</span>
+
+            <div>
+              <div class="filter-tags-extended">
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended" @click="toggleTag($event)">тег</button>
+              <button class="filter-tag-extended filter-tag-extended-desktop filter-tag-extended-all" @click="toggleAllTags($event)">Все теги</button>
+              </div>
+              <div class="filter-tag-center">
+                <button class="filter-tag-extended filter-tag-extended-mobile filter-tag-extended-all" @click="toggleAllTags($event)">Все теги</button>
+              </div>
+            </div>
+
+            <button type="button" class="search-button" x-show="hasActiveTags">Перейти</button>
+          </div>
+        </div>
+    </section>
+  </main>
+  <footer class="site-footer container-margin-top">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <a href="#" class="brand footer-brand">
+          <img src="img/logo_horizontal.svg" alt="Логотип" class="brand-mark">
+        </a>
+      </div>
+      <div class="footer-main">
+        <div class="footer-contacts">
+          <a href="mailto:test@mail.ru" class="footer-contact">test@mail.ru</a>
+          <a href="tel:+79004445588" class="footer-contact">+7 900 444 55 88</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="ВКонтакте">
+            <img src="img/vk.svg" alt="ВКонтакте">
+          </a>
+          <a href="#" class="social-link" aria-label="Telegram">
+            <img src="img/telegram.svg" alt="Telegram">
+          </a>
+        </div>
+        <div class="footer-info">
+          <a href="#" class="footer-link">Облако тегов</a>
+          <a href="#" class="footer-link">SEO-текст с кратким описанием сайта</a>
+          <p class="footer-copyright">©Все права защищены, <span x-text="new Date().getFullYear()"></span></p>
+        </div>
+      </div>
+      <div class="footer-main-mobile">
+        <div class="footer-main-mobile-social">
+          <div class="footer-contacts">
+            <a href="mailto:test@mail.ru" class="footer-contact">test@mail.ru</a>
+            <a href="tel:+79004445588" class="footer-contact">+7 900 444 55 88</a>
+          </div>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="ВКонтакте">
+              <img src="img/vk.svg" alt="ВКонтакте">
+            </a>
+            <a href="#" class="social-link" aria-label="Telegram">
+              <img src="img/telegram.svg" alt="Telegram">
+            </a>
+          </div>
+        </div>
+        <div class="footer-info">
+          <a href="#" class="footer-link">Облако тегов</a>
+          <a href="#" class="footer-link">SEO-текст с кратким описанием сайта</a>
+          <p class="footer-copyright">©Все права защищены, <span x-text="new Date().getFullYear()"></span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

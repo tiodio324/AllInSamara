@@ -1142,12 +1142,17 @@ main {
   transition: all 0.3s ease;
 }
 
-.filter-tag-extended.active {
+.filter-tag-extended-all {
   background: var(--var-bg);
 }
 
-.filter-tag-extended:hover:not(.active) {
+.filter-tag-extended:hover {
   background: rgba(48, 62, 201, 0.25);
+}
+
+.filter-tag-extended.active, .filter-tag-extended.active:hover {
+  background: #303EC9;
+  color: #ffffff;
 }
 
 .filter-right {
@@ -2816,6 +2821,28 @@ main {
 
 .article-share-item {
   margin: 0;
+}
+
+/* Страница Облако тегов */
+.tags-cloud-breadcrumbs {
+  margin-bottom: 0 !important;
+}
+
+.tags-cloud-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+.tags-cloud-filter-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 1520px;
 }
 
 @media (max-width: 1919px) {
