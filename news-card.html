@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru" x-data="{ mobileMenuOpen: false }" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Language" content="ru">
+  <meta http-equiv="Cache-Control" content="public, max-age=3600">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="title" content="Самарский культурный навигатор">
+  <meta name="description" content="Самарский культурный навигатор — афиша, события, музеи, театры и культурные маршруты Самары и области.">
+  <meta name="application-name" content="Самарский культурный навигатор">
+  <link rel="canonical" href="/">
+  <title>Самарский культурный навигатор</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Самарский культурный навигатор">
+  <meta property="og:description" content="Афиша, места и культурные маршруты Самары и области.">
+  <meta property="og:url" content="/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/mainPage.css">
+  <link rel="stylesheet" href="css/headerBluePages.css">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand header-brand">
+        <img src="img/logo_horizontal.svg" alt="Логотип" class="brand-mark">
+      </a>
+
+      <div x-data="{ 
+        supportOpen: false, 
+        eventsOpen: false, 
+        placesOpen: false, 
+        newsOpen: false,
+        mobileMenuOpen: false,
+        isDesktop: window.innerWidth > 1124,
+        isLargeScreen: window.innerWidth > 1400,
+        init() {
+          window.addEventListener('resize', () => {
+            this.isDesktop = window.innerWidth > 1124;
+            this.isLargeScreen = window.innerWidth > 1400;
+            if (this.isDesktop) {
+              this.mobileMenuOpen = false;
+            }
+          });
+        }
+      }">
+        <nav class="header-nav" x-show="mobileMenuOpen || isDesktop" x-transition>
+        <div class="nav-links">
+          <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
+            <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
+              <span class="nav-text">Поддержка</span>
+              <img :src="open ? 'img/arrow-up-black.svg' : 'img/arrow-down-black.svg'" alt="Стрелка" class="nav-arrow">
+            </button>
+            <div class="nav-dropdown" x-show="open" x-transition>
+              <ul class="dropdown-list">
+                <li><a href="#support1" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#support2" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#support3" class="dropdown-link">Страница списка</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
+            <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
+              <span class="nav-text">Мероприятия</span>
+              <img :src="open ? 'img/arrow-up-black.svg' : 'img/arrow-down-black.svg'" alt="Стрелка" class="nav-arrow">
+            </button>
+            <div class="nav-dropdown" x-show="open" x-transition>
+              <ul class="dropdown-list">
+                <li><a href="#events1" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#events2" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#events3" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#events4" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#events5" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#events6" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#events7" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#events8" class="dropdown-link">Страница списка</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
+            <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
+              <span class="nav-text">Учреждения</span>
+              <img :src="open ? 'img/arrow-up-black.svg' : 'img/arrow-down-black.svg'" alt="Стрелка" class="nav-arrow">
+            </button>
+            <div class="nav-dropdown" x-show="open" x-transition>
+              <ul class="dropdown-list">
+                <li><a href="institutions.html" class="dropdown-link">Созвездие</a></li>
+                <li><a href="#places2" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#places3" class="dropdown-link">Страница списка</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
+            <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
+              <span class="nav-text">Новости</span>
+              <img :src="open ? 'img/arrow-up-black.svg' : 'img/arrow-down-black.svg'" alt="Стрелка" class="nav-arrow">
+            </button>
+            <div class="nav-dropdown" x-show="open" x-transition>
+              <ul class="dropdown-list">
+                <li><a href="#news1" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#news2" class="dropdown-link">Страница списка</a></li>
+                <li><a href="#news3" class="dropdown-link">Страница списка</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <a href="photo-report.html" class="nav-link nav-toggle nav-link--no-dropdown">Фотоотчеты</a>
+        </div>
+      </nav>
+      <form class="nav-search" x-data="{ searchOpen: false }" role="search" aria-label="Поиск по сайту" action="search_empty.html" method="get">
+        <div class="search-input-wrapper">
+          <img :src="isLargeScreen ? 'img/search-header-black.svg' : 'img/search-header-white.svg'" alt="Поиск" class="search-icon" onclick="window.location.href='search_empty.html';">
+          <input id="site-search" name="site-search" type="search" placeholder="Поиск по сайту" class="search-input" autocomplete="off" >
+        </div>
+      </form>
+      <button class="btn-blind-icon" type="button" aria-label="Показать/скрыть">
+        <img src="img/blind-eye.svg" alt="Слепой режим">
+      </button>
+      <button class="mobile-menu-toggle" type="button" @click="mobileMenuOpen = !mobileMenuOpen">
+        <img src="img/btn-menu-toggle.svg" alt="Меню">
+      </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- Основная информация -->
+    <section class="institution-info">
+      <div class="container">
+        <div class="institution-content">
+          <div class="institution-main news-card-main">
+            <!-- Хлебные крошки -->
+            <div class="breadcrumbs">
+              <div class="breadcrumbs-list">
+                <a href="index.html" class="breadcrumb-link">Главная</a>
+                <span class="breadcrumb-separator"></span>
+                <a href="news.html" class="breadcrumb-link">Новости</a>
+                <span class="breadcrumb-separator"></span>
+                <span class="breadcrumb-current">Страница новости</span>
+              </div>
+            </div>
+
+            <div class="institution-header">
+              <h1 class="institution-title">Филармония запускает абонемент для студентов</h1>
+            </div>
+
+            <div class="news-card-article-text-container">
+              <textarea class="news-card-article-text" readonly resize="none">
+Молодёжь сможет посещать концерты по специальным льготным тарифам.
+
+Идея заключается в предоставлении молодёжи возможности посещения концертов и культурных мероприятий по специально сниженным ценам, называемым льготными тарифами. Эта инициатива направлена на привлечение молодых людей к культурной жизни, поддержку музыкального искусства и повышение доступности культурного досуга среди молодежи.
+
+Основные моменты программы:
+
+1. Льготные тарифы
+
+Для молодых людей будут установлены специальные цены на билеты, значительно ниже стандартных тарифов. Это позволит молодым людям чаще посещать мероприятия и поддерживать развитие культуры.
+
+2. Категории участников
+
+Программа распространяется преимущественно на молодёжь, возраст которой ограничен определённым диапазоном, часто установленным в пределах от 18 до 30 лет. Однако конкретные условия участия зависят от организаторов конкретных мероприятий.
+
+3. Ограничение количества билетов
+
+Чтобы обеспечить справедливое распределение преимуществ программы, число льготных билетов ограничено. Организаторы определяют квоту на количество специальных билетов, доступной молодёжи.
+
+4. Подтверждение права на льготу
+
+Молодые люди обязаны предъявить документ, подтверждающий право на участие в программе. Обычно это паспорт или студенческий билет, удостоверяющий принадлежность к возрастной группе.
+
+5. Культурные цели инициативы
+
+Основная цель программы — популяризация музыки и культурных мероприятий среди молодёжи, поддержка развития отечественного искусства и вовлечение новых поколений в культурную жизнь.
+
+Таким образом, данная программа представляет собой важный инструмент поддержки культурного развития молодёжи и способствует созданию благоприятных условий для ознакомления молодого поколения с достижениями отечественной музыкальной сцены.
+              </textarea>
+            </div>
+
+            <div class="institution-details">
+              <div class="news-contact-group">
+                <div class="contact-item-double">
+                  <div class="contact-item">
+                    <div class="contact-icon">
+                      <img src="img/website-icon.svg" alt="Сайт">
+                    </div>
+                    <div class="contact-text">
+                      <p>www.sozvezdie.ru</p>
+                    </div>
+                  </div>
+                  <div class="contact-item news-share-item" onclick="console.log('Поделиться')">
+                    <div class="contact-text">
+                      <p class="news-share-text">Поделиться</p>
+                    </div>
+                    <div class="contact-icon">
+                      <img src="img/share-icon.svg" alt="Поделиться">
+                    </div>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <img src="img/person-icon.svg" alt="Автор">
+                  </div>
+                  <div class="contact-text">
+                    <p>Автор: Мария Иванова</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <img src="img/clock-icon.svg" alt="Дата публикации">
+                  </div>
+                  <div class="contact-text">
+                    <p>Опубликовано: 01.09.2025, 14:30</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="institution-buy-ticket">
+                <button type="button" class="search-button">Купить билет</button>
+              </div>
+
+              <div class="services-list">
+                <span class="service-tag">искусство</span>
+                <span class="service-tag">выставки</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Галерея изображений -->
+          <div class="images-gallery" x-data="{
+            currentImage: 0,
+            totalSegments: window.innerWidth > 576 ? 6 : 5,
+            images: [
+              'img/news-bg.png',
+              'img/image-gallery/card_2.png', 
+              'img/image-gallery/card_3.png',
+              'img/image-gallery/card_4.png',
+              'img/image-gallery/card_5.png',
+              'img/image-gallery/card_6.png',
+              'img/image-gallery/card_7.png',
+              'img/image-gallery/card_8.png',
+              'img/image-gallery/card_9.png'
+            ],
+            nextImage() {
+              this.currentImage = (this.currentImage + 1) % this.images.length;
+            },
+            prevImage() {
+              this.currentImage = this.currentImage === 0 ? this.images.length - 1 : this.currentImage - 1;
+            },
+            selectImage(index) {
+              this.currentImage = index;
+            },
+            get progressPercentage() {
+              return ((this.currentImage + 1) / this.images.length) * 100;
+            },
+            getProgressWidth(index) {
+              const totalImages = this.images.length;
+              const currentProgress = (this.currentImage + 1) / totalImages;
+              const segmentProgress = currentProgress * this.totalSegments;
+              
+              if (index < Math.floor(segmentProgress)) {
+                return 100; // Полностью заполнен
+              } else if (index === Math.floor(segmentProgress)) {
+                return (segmentProgress - Math.floor(segmentProgress)) * 100; // Частично заполнен
+              } else {
+                return 0; // Пустой
+              }
+            },
+            init() {
+              window.addEventListener('resize', () => {
+                this.totalSegments = window.innerWidth > 576 ? 6 : 5;
+              });
+            }
+          }">
+            <div class="images-gallery__main">
+              <div class="images-gallery__thumbnails">
+                <template x-for="(image, index) in images" :key="index">
+                  <img 
+                    :src="image" 
+                    :alt="`Фото мероприятия ${index + 1}`" 
+                    class="images-gallery__thumbnail"
+                    :class="{ active: currentImage === index }"
+                    @click="selectImage(index)"
+                  >
+                </template>
+              </div>
+            </div>
+
+            <div class="images-gallery__current">
+              <img 
+                :src="images[currentImage]" 
+                :alt="`Текущее фото мероприятия ${currentImage + 1}`" 
+                class="images-gallery__current-image news-card-images-gallery__current-image"
+              >
+              <div class="images-gallery__controls-container">
+                <div class="images-gallery__controls">
+                  <button class="images-gallery__arrow images-gallery__arrow--prev" @click="prevImage()">
+                    <img src="img/arrow-left-images-gallery.svg" alt="Предыдущее">
+                  </button>
+                  <button class="images-gallery__arrow images-gallery__arrow--next" @click="nextImage()">
+                    <img src="img/arrow-right-images-gallery.svg" alt="Следующее">
+                  </button>
+                </div>
+                <div class="images-gallery__dots">
+                  <div class="images-gallery__progress">
+                    <template x-for="(image, index) in totalSegments" :key="index">
+                      <div 
+                        class="images-gallery__progress-bar"
+                        :style="{ '--progress-width': getProgressWidth(index) + '%' }"
+                      ></div>
+                    </template>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer container-margin-top">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <a href="#" class="brand footer-brand">
+          <img src="img/logo_horizontal.svg" alt="Логотип" class="brand-mark">
+        </a>
+      </div>
+      <div class="footer-main">
+        <div class="footer-contacts">
+          <a href="mailto:test@mail.ru" class="footer-contact">test@mail.ru</a>
+          <a href="tel:+79004445588" class="footer-contact">+7 900 444 55 88</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="ВКонтакте">
+            <img src="img/vk.svg" alt="ВКонтакте">
+          </a>
+          <a href="#" class="social-link" aria-label="Telegram">
+            <img src="img/telegram.svg" alt="Telegram">
+          </a>
+        </div>
+        <div class="footer-info">
+          <a href="#" class="footer-link">Облако тегов</a>
+          <a href="#" class="footer-link">SEO-текст с кратким описанием сайта</a>
+          <p class="footer-copyright">©Все права защищены, <span x-text="new Date().getFullYear()"></span></p>
+        </div>
+      </div>
+      <div class="footer-main-mobile">
+        <div class="footer-main-mobile-social">
+          <div class="footer-contacts">
+            <a href="mailto:test@mail.ru" class="footer-contact">test@mail.ru</a>
+            <a href="tel:+79004445588" class="footer-contact">+7 900 444 55 88</a>
+          </div>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="ВКонтакте">
+              <img src="img/vk.svg" alt="ВКонтакте">
+            </a>
+            <a href="#" class="social-link" aria-label="Telegram">
+              <img src="img/telegram.svg" alt="Telegram">
+            </a>
+          </div>
+        </div>
+        <div class="footer-info">
+          <a href="#" class="footer-link">Облако тегов</a>
+          <a href="#" class="footer-link">SEO-текст с кратким описанием сайта</a>
+          <p class="footer-copyright">©Все права защищены, <span x-text="new Date().getFullYear()"></span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
