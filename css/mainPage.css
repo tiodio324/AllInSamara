@@ -1823,7 +1823,7 @@ main {
 }
 
 .news-content {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(48, 62, 201, 0.15);
   backdrop-filter: blur(50px);
   -webkit-backdrop-filter: blur(50px);
   padding: 20px;
@@ -2500,8 +2500,10 @@ main {
   background-image: url('../img/office-bg.png');
 }
 
-.news-background-image .institutions-card-background {
+.news-background-image {
   background-image: url('../img/news-bg.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .institutions-card-content {
@@ -2717,6 +2719,7 @@ main {
 /* Страница Новости */
 .news-card-content {
   min-height: 27%;
+  background: rgba(48, 62, 201, 0.15);
 }
 
 .news-list-bg-card:hover .institutions-details {
