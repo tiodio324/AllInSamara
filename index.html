@@ -57,10 +57,10 @@
       }">
         <nav class="header-nav" x-show="mobileMenuOpen || isDesktop" x-transition>
         <div class="nav-links">
-          <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
-            <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
+          <div class="nav-item" x-data="{ open: false }" @mouseenter="isDesktop && (open = true)" @mouseleave="isDesktop && (open = false)" @click.outside="open = false">
+            <button type="button" class="nav-toggle" :aria-expanded="open" onclick="window.location.href='index.html';">
               <span class="nav-text">Поддержка</span>
-              <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow">
+              <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow" @click.stop.prevent="open = !open">
             </button>
             <div class="nav-dropdown" x-show="open" x-transition>
               <ul class="dropdown-list">
@@ -71,10 +71,10 @@
             </div>
           </div>
 
-          <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
-            <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
+          <div class="nav-item" x-data="{ open: false }" @mouseenter="isDesktop && (open = true)" @mouseleave="isDesktop && (open = false)" @click.outside="open = false">
+            <button type="button" class="nav-toggle" :aria-expanded="open" onclick="window.location.href='institutions-list.html';">
               <span class="nav-text">Мероприятия</span>
-              <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow">
+              <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow" @click.stop.prevent="open = !open">
             </button>
             <div class="nav-dropdown" x-show="open" x-transition>
               <ul class="dropdown-list">
@@ -90,10 +90,10 @@
             </div>
           </div>
 
-          <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
-            <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
+          <div class="nav-item" x-data="{ open: false }" @mouseenter="isDesktop && (open = true)" @mouseleave="isDesktop && (open = false)" @click.outside="open = false">
+            <button type="button" class="nav-toggle" :aria-expanded="open" onclick="window.location.href='institutions-list.html';">
               <span class="nav-text">Учреждения</span>
-              <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow">
+              <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow" @click.stop.prevent="open = !open">
             </button>
             <div class="nav-dropdown" x-show="open" x-transition>
               <ul class="dropdown-list">
@@ -104,10 +104,10 @@
             </div>
           </div>
 
-          <div class="nav-item" x-data="{ open: false }" @click.away="open = false">
-            <button type="button" class="nav-toggle" @click="open = !open" :aria-expanded="open">
+          <div class="nav-item" x-data="{ open: false }" @mouseenter="isDesktop && (open = true)" @mouseleave="isDesktop && (open = false)" @click.outside="open = false">
+            <button type="button" class="nav-toggle" :aria-expanded="open" onclick="window.location.href='news.html';">
               <span class="nav-text">Новости</span>
-              <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow">
+              <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow" @click.stop.prevent="open = !open">
             </button>
             <div class="nav-dropdown" x-show="open" x-transition>
               <ul class="dropdown-list">
