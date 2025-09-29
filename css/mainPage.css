@@ -356,11 +356,44 @@ main {
 .hero {
   position: relative;
   border-radius: 0 0 50px 50px;
-  background-image: url('../img/hero_bg-1920.png');
+  overflow: hidden;
+}
+
+/* Hero Slides */
+.hero-slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+.hero-shadowed::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 2;
 }
 .hero-inner {
   position: relative;
@@ -446,6 +479,18 @@ main {
   z-index: 3;
   margin-top: 200px;
 }
+
+.hero-logo {
+  width: clamp(167px, 20vw, 426px);
+}
+
+.hero-logo img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
 .hero-brand {
   display: flex;
   flex-direction: column;
@@ -487,8 +532,16 @@ main {
 .slider-arrow--prev {
   background: rgba(48, 62, 201, 0.15);
 }
+.slider-arrow--prev:hover {
+  background: rgba(48, 62, 201, 0.25);
+  transform: scale(1.05);
+}
 .slider-arrow--next {
   background: #303EC9;
+}
+.slider-arrow--next:hover {
+  background: #252bb8;
+  transform: scale(1.05);
 }
 .arrow-icon {
   width: 21px;
@@ -2808,8 +2861,17 @@ main {
 }
 
 /* Страница Авторская статья */
+.article-header {
+  margin-bottom: 0;
+}
+
 .article-container {
   max-width: 1200px;
+  max-height: none;
+}
+
+.article-text {
+  max-height: none;
 }
 
 .article-contact-group {
@@ -3026,8 +3088,27 @@ main {
   .mobile-menu-toggle {
     display: block;
   }
-  
+
+  .hero {
+    padding-bottom: 20px;
+  }
+
   .hero .hero-content {
+    margin-top: 20px;
+  }
+
+  .hero-slider .slider-arrow {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+  }
+
+  .hero-slider .slider-arrow img {
+    width: 12px;
+    height: 10px;
+  }
+  
+  .hero .hero-content .hero-search-card {
     display: none;
   }
   
@@ -3459,10 +3540,10 @@ main {
   }
   
   .hero {
-    padding: 15px 20px 60px;
+    padding: 15px 20px 20px;
   }
   
-  .hero-content {
+  .hero-content .hero-search-card {
     display: none;
   }
 
@@ -3584,9 +3665,9 @@ main {
     font-size: 14px;
   }
   .hero-logo {
-    margin-top: 20px;
+    margin-top: 140px;
   }
-  .hero-content {
+  .hero-content .hero-search-card {
     display: none;
   }
   .hero-search-card {
@@ -3748,11 +3829,7 @@ main {
   }
   
   .hero {
-    padding: 10px 15px 40px;
-  }
-  
-  .hero-content {
-    display: none;
+    padding: 10px 15px 20px;
   }
   
   .section-head h2,
@@ -3796,9 +3873,8 @@ main {
     flex-direction: column !important;
     gap: 20px;
   }
-  
-  /* Скрываем оригинальный hero-content и показываем мобильный */
-  .hero-content {
+
+  .hero-content .hero-search-card {
     display: none;
   }
 
