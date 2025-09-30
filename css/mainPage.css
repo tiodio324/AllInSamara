@@ -2564,6 +2564,10 @@ main {
   background-position: center;
 }
 
+.news-example-background-image {
+  background-image: url('../img/news-example-bg.png');
+}
+
 .institutions-card-content {
   width: 100%;
   background: rgba(48, 62, 201, 0.95);
@@ -2776,8 +2780,8 @@ main {
 
 /* Страница Новости */
 .news-card-content {
-  min-height: 27%;
   background: rgba(48, 62, 201, 0.15);
+  min-height: auto;
 }
 
 .news-list-bg-card:hover .institutions-details {
@@ -3457,11 +3461,6 @@ main {
 
   .institutions-grid {
     grid-template-columns: 1fr;
-  }
-
-  /* Страница Новости */
-  .news-card-content {
-    min-height: 27%;
   }
 }
 
