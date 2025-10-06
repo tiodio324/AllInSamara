@@ -176,6 +176,25 @@ main {
   padding-right: 40px;
 }
 
+/* Firefox Scrollbar Styles */
+@supports (-moz-appearance: none) {
+  .dropdown-list {
+    scrollbar-color: #242424 #E3E3E3;
+  }
+
+  .carousel-container,
+  .events-carousel-section .carousel-container,
+  .filter-modal-body,
+  .images-gallery__thumbnails,
+  .news-card-article-text {
+    scrollbar-color: #303EC9 rgba(48, 62, 201, 0.15);
+  }
+
+  .filter-section-list {
+    scrollbar-color: #000000 rgba(0, 0, 0, 0.1);
+  }
+}
+
 /* Webkit Scrollbar Styles */
 .dropdown-list::-webkit-scrollbar {
   width: 4px;
@@ -1445,6 +1464,7 @@ main {
   overflow-x: auto;
   overflow-y: hidden;
   padding-bottom: 10px;
+  scrollbar-width: none;
 }
 
 .calendar-weekdays::-webkit-scrollbar {
@@ -1483,6 +1503,7 @@ main {
   overflow-x: auto;
   overflow-y: hidden;
   padding-bottom: 10px;
+  scrollbar-width: none;
 }
 
 .calendar-days::-webkit-scrollbar {
@@ -2202,6 +2223,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
 }
 
 /* Хлебные крошки */
@@ -3311,6 +3333,11 @@ main {
 
   .events-gradient {
     width: 200px;
+  }
+
+  .images-gallery__current-image {
+    min-width: calc(100vw - 91px - 20px - 100px);
+    max-width: calc(100vw - 91px - 20px - 100px);
   }
 
   /* Страница учреждения */
