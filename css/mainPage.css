@@ -2259,7 +2259,7 @@ main {
   margin: 0;
 }
 
-.institution-details {
+.institution-details, .institution-description-services {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -3064,6 +3064,14 @@ main {
     gap: 20px;
   }
 
+  .institution-description-services {
+    flex-direction: row;
+  }
+
+  .institution-description {
+    max-width: 50%;
+  }
+
   .institution-details p, .service-tag {
     font-size: 14px;
   }
@@ -3626,6 +3634,14 @@ main {
   /* Страница учреждения */
   .breadcrumb-link, .breadcrumb-current, .service-tag {
     font-size: 12px;
+  }
+
+  .institution-description-services {
+    flex-direction: column;
+  }
+
+  .institution-description {
+    max-width: 100%;
   }
 
   /* Страница Культурные учреждения */
