@@ -1368,6 +1368,10 @@ main {
   margin-top: 20px;
 }
 
+.categories-date-filter {
+  margin-top: 0;
+}
+
 .calendar {
   display: flex;
   flex-direction: column;
@@ -1376,6 +1380,10 @@ main {
   gap: 20px;
   border-radius: 20px;
   padding: 20px;
+}
+
+.categories-calendar {
+  padding-top: 14px;
 }
 
 .calendar-header {
