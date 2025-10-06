@@ -179,6 +179,7 @@ main {
 /* Webkit Scrollbar Styles */
 .dropdown-list::-webkit-scrollbar {
   width: 4px;
+  height: 4px;
 }
 
 .dropdown-list::-webkit-scrollbar-track {
@@ -1029,7 +1030,8 @@ main {
 
 /* Custom Webkit Scrollbar for Carousel */
 .carousel-container::-webkit-scrollbar {
-  height: 20px;
+  height: 10px;
+  width: 10px;
 }
 
 .carousel-container::-webkit-scrollbar-track {
@@ -1332,6 +1334,7 @@ main {
 
 .events-carousel-section .carousel-container::-webkit-scrollbar {
   height: 10px;
+  width: 10px;
 }
 
 .events-carousel-section .carousel-container::-webkit-scrollbar-track {
@@ -1593,6 +1596,7 @@ main {
 
 .filter-modal-body::-webkit-scrollbar {
   width: 4px;
+  height: 4px;
 }
 
 .filter-modal-body::-webkit-scrollbar-track {
@@ -1651,6 +1655,7 @@ main {
 
 .filter-section-list::-webkit-scrollbar {
   width: 4px;
+  height: 4px;
 }
 
 .filter-section-list::-webkit-scrollbar-track {
@@ -2364,6 +2369,7 @@ main {
 
 .images-gallery__thumbnails::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 
 .images-gallery__thumbnails::-webkit-scrollbar-track {
@@ -2763,6 +2769,10 @@ main {
   transform: scaleY(-1);
 }
 
+.photo-report-images-gallery__thumbnails img {
+  transform: scaleY(-1)
+}
+
 .photo-report-grid {
   grid-template-columns: repeat(4, 1fr);
   justify-self: center;
@@ -2818,6 +2828,7 @@ main {
 
 .news-card-article-text::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 
 .news-card-article-text::-webkit-scrollbar-track {
