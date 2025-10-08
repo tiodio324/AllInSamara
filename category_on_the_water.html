@@ -176,19 +176,53 @@
         <div class="date-filter categories-date-filter">
           <div class="calendar categories-calendar">
             <div class="calendar-header">
-              <div class="month-dropdown" x-data="{ open: false }">
+              <div class="month-dropdown" x-data="{
+                open: false,
+                months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                currentMonth: 'Январь',
+                init() {
+                  const monthNames = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+                  this.currentMonth = monthNames[new Date().getMonth()];
+                },
+                selectMonth(month) {
+                  this.currentMonth = month;
+                  this.open = false;
+                }
+              }">
                 <button class="month-button" @click="open = !open" :aria-expanded="open">
-                  <span>Август</span>
+                  <span x-text="currentMonth"></span>
                   <img :src="open ? 'img/arrow-up-black.svg' : 'img/arrow-down-black.svg'" alt="">
                 </button>
+                <div class="nav-dropdown" x-show="open" x-transition @click.away="open = false">
+                  <ul class="dropdown-list">
+                    <template x-for="month in months" :key="month">
+                      <li><button type="button" class="dropdown-link" @click="selectMonth(month)" x-text="month"></button></li>
+                    </template>
+                  </ul>
+                </div>
               </div>
-              <div class="year-dropdown" x-data="{ open: false }">
+              <div class="year-dropdown" x-data="{
+                open: false,
+                currentYear: `${new Date().getFullYear()}`,
+                years: ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+                selectYear(year) {
+                  this.currentYear = year;
+                  this.open = false;
+                }
+              }">
                 <button class="year-button" @click="open = !open" :aria-expanded="open">
-                  <span>2025</span>
+                  <span x-text="currentYear"></span>
                   <img :src="open ? 'img/arrow-up-black.svg' : 'img/arrow-down-black.svg'" alt="">
                 </button>
-          </div>
-        </div>
+                <div class="nav-dropdown nav-dropdown--left" x-show="open" x-transition @click.away="open = false">
+                  <ul class="dropdown-list">
+                    <template x-for="year in years" :key="year">
+                      <li><button type="button" class="dropdown-link" @click="selectYear(year)" x-text="year"></button></li>
+                    </template>
+                  </ul>
+                </div>
+              </div>
+            </div>
         <div class="calendar-grid">
               <div class="calendar-weekdays">
                 <span>пн</span><span>вт</span><span>ср</span><span>чт</span><span>пт</span><span>сб</span><span>вс</span>

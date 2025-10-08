@@ -164,6 +164,12 @@ main {
   width: 245px;
   margin-top: 10px;
 }
+
+.nav-dropdown--left {
+  left: auto;
+  right: 0;
+}
+
 .dropdown-list {
   list-style: none;
   padding: 20px;
