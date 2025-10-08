@@ -2865,6 +2865,14 @@ main {
   background-image: url('../img/photo-report.png');
   background-size: cover;
   background-position: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.photo-report-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
 /* Страница Новости */
