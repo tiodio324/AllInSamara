@@ -192,7 +192,8 @@ main {
   .events-carousel-section .carousel-container,
   .filter-modal-body,
   .images-gallery__thumbnails,
-  .news-card-article-text {
+  .news-card-article-text,
+  .description-text {
     scrollbar-color: #303EC9 rgba(48, 62, 201, 0.15);
   }
 
@@ -2344,6 +2345,28 @@ main {
   line-height: 1.21;
   color: rgba(34, 34, 34, 0.6);
   margin: 0;
+  max-height: 800px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.description-text::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.description-text::-webkit-scrollbar-track {
+  background: rgba(48, 62, 201, 0.15);
+  border-radius: 10px;
+}
+
+.description-text::-webkit-scrollbar-thumb {
+  background: #303EC9;
+  border-radius: 10px;
+}
+
+.description-text::-webkit-scrollbar-thumb:hover {
+  background: #2a35b0;
 }
 
 .services-title {
