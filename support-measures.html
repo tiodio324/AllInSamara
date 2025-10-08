@@ -329,6 +329,20 @@
                   <div class="institutions-title-section">
                     <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
                     <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
+                      <span class="institutions-tag">Организация выставок</span>
+                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
+                    </div>
                     <a href="news-card.html" class="institutions-link">Читать подробнее</a>
                   </div>
                 </div>
@@ -341,6 +355,20 @@
                   <div class="institutions-title-section">
                     <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
                     <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
+                      <span class="institutions-tag">Организация выставок</span>
+                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
+                    </div>
                     <a href="news-card.html" class="institutions-link">Читать подробнее</a>
                   </div>
                 </div>
@@ -353,6 +381,20 @@
                   <div class="institutions-title-section">
                     <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
                     <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
+                      <span class="institutions-tag">Организация выставок</span>
+                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
+                    </div>
                     <a href="news-card.html" class="institutions-link">Читать подробнее</a>
                   </div>
                 </div>
@@ -365,6 +407,20 @@
                   <div class="institutions-title-section">
                     <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
                     <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
+                      <span class="institutions-tag">Организация выставок</span>
+                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
+                    </div>
                     <a href="news-card.html" class="institutions-link">Читать подробнее</a>
                   </div>
                 </div>
@@ -377,6 +433,20 @@
                   <div class="institutions-title-section">
                     <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
                     <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
+                      <span class="institutions-tag">Организация выставок</span>
+                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
+                    </div>
                     <a href="news-card.html" class="institutions-link">Читать подробнее</a>
                   </div>
                 </div>
@@ -389,6 +459,20 @@
                   <div class="institutions-title-section">
                     <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
                     <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
+                      <span class="institutions-tag">Организация выставок</span>
+                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
+                    </div>
                     <a href="news-card.html" class="institutions-link">Читать подробнее</a>
                   </div>
                 </div>
@@ -401,6 +485,21 @@
                   <div class="institutions-title-section">
                     <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
                     <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
+                      <span class="institutions-tag">Организация выставок</span>
+                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
+                      <span class="institutions-tag" x-show="showAllTags">Аренда залов для мероприятий</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
+                    </div>
                     <a href="news-card.html" class="institutions-link">Читать подробнее</a>
                   </div>
                 </div>
@@ -413,6 +512,20 @@
                   <div class="institutions-title-section">
                     <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
                     <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
+                      <span class="institutions-tag">Организация выставок</span>
+                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
+                    </div>
                     <a href="news-card.html" class="institutions-link">Читать подробнее</a>
                   </div>
                 </div>
@@ -425,6 +538,20 @@
                   <div class="institutions-title-section">
                     <h3 class="institutions-title">Филармония запускает абонемент для студентов</h3>
                     <p class="institutions-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
+                      <span class="institutions-tag">Организация выставок</span>
+                      <span class="institutions-tag">Проведение концертов и мастер-классов</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
+                    </div>
                     <a href="news-card.html" class="institutions-link">Читать подробнее</a>
                   </div>
                 </div>

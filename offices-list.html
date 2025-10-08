@@ -352,24 +352,33 @@
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">+7 (495) 123-45-67</span>
+                          <a href="tel:+74951234567" class="institutions-text">+7 (495) 123-45-67</a>
                         </div>
                       </div>
                       <div class="institutions-detail-item-double">
                         <div class="institutions-detail-item">
                           <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
+                          <a href="mailto:info@sozvezdie.ru" class="institutions-text">info@sozvezdie.ru</a>
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
+                          <a href="https://www.sozvezdie.ru" class="institutions-text">www.sozvezdie.ru</a>
                         </div>
                       </div>
                     </div>
-                    <div class="institutions-tags">
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
                       <span class="institutions-tag">Организация выставок</span>
                       <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
                     </div>
                   </div>
                   <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
@@ -406,24 +415,33 @@
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">+7 (495) 123-45-67</span>
+                          <a href="tel:+74951234567" class="institutions-text">+7 (495) 123-45-67</a>
                         </div>
                       </div>
                       <div class="institutions-detail-item-double">
                         <div class="institutions-detail-item">
                           <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
+                          <a href="mailto:info@sozvezdie.ru" class="institutions-text">info@sozvezdie.ru</a>
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
+                          <a href="https://www.sozvezdie.ru" class="institutions-text">www.sozvezdie.ru</a>
                         </div>
                       </div>
                     </div>
-                    <div class="institutions-tags">
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
                       <span class="institutions-tag">Организация выставок</span>
                       <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
                     </div>
                   </div>
                   <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
@@ -460,24 +478,33 @@
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">+7 (495) 123-45-67</span>
+                          <a href="tel:+74951234567" class="institutions-text">+7 (495) 123-45-67</a>
                         </div>
                       </div>
                       <div class="institutions-detail-item-double">
                         <div class="institutions-detail-item">
                           <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
+                          <a href="mailto:info@sozvezdie.ru" class="institutions-text">info@sozvezdie.ru</a>
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
+                          <a href="https://www.sozvezdie.ru" class="institutions-text">www.sozvezdie.ru</a>
                         </div>
                       </div>
                     </div>
-                    <div class="institutions-tags">
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
                       <span class="institutions-tag">Организация выставок</span>
                       <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
                     </div>
                   </div>
                   <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
@@ -514,24 +541,33 @@
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">+7 (495) 123-45-67</span>
+                          <a href="tel:+74951234567" class="institutions-text">+7 (495) 123-45-67</a>
                         </div>
                       </div>
                       <div class="institutions-detail-item-double">
                         <div class="institutions-detail-item">
                           <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
+                          <a href="mailto:info@sozvezdie.ru" class="institutions-text">info@sozvezdie.ru</a>
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
+                          <a href="https://www.sozvezdie.ru" class="institutions-text">www.sozvezdie.ru</a>
                         </div>
                       </div>
                     </div>
-                    <div class="institutions-tags">
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
                       <span class="institutions-tag">Организация выставок</span>
                       <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
                     </div>
                   </div>
                   <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
@@ -568,24 +604,33 @@
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">+7 (495) 123-45-67</span>
+                          <a href="tel:+74951234567" class="institutions-text">+7 (495) 123-45-67</a>
                         </div>
                       </div>
                       <div class="institutions-detail-item-double">
                         <div class="institutions-detail-item">
                           <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
+                          <a href="mailto:info@sozvezdie.ru" class="institutions-text">info@sozvezdie.ru</a>
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
+                          <a href="https://www.sozvezdie.ru" class="institutions-text">www.sozvezdie.ru</a>
                         </div>
                       </div>
                     </div>
-                    <div class="institutions-tags">
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
                       <span class="institutions-tag">Организация выставок</span>
                       <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
                     </div>
                   </div>
                   <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
@@ -622,24 +667,33 @@
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">+7 (495) 123-45-67</span>
+                          <a href="tel:+74951234567" class="institutions-text">+7 (495) 123-45-67</a>
                         </div>
                       </div>
                       <div class="institutions-detail-item-double">
                         <div class="institutions-detail-item">
                           <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
+                          <a href="mailto:info@sozvezdie.ru" class="institutions-text">info@sozvezdie.ru</a>
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
+                          <a href="https://www.sozvezdie.ru" class="institutions-text">www.sozvezdie.ru</a>
                         </div>
                       </div>
                     </div>
-                    <div class="institutions-tags">
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
                       <span class="institutions-tag">Организация выставок</span>
                       <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
                     </div>
                   </div>
                   <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
@@ -676,24 +730,33 @@
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">+7 (495) 123-45-67</span>
+                          <a href="tel:+74951234567" class="institutions-text">+7 (495) 123-45-67</a>
                         </div>
                       </div>
                       <div class="institutions-detail-item-double">
                         <div class="institutions-detail-item">
                           <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
+                          <a href="mailto:info@sozvezdie.ru" class="institutions-text">info@sozvezdie.ru</a>
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
+                          <a href="https://www.sozvezdie.ru" class="institutions-text">www.sozvezdie.ru</a>
                         </div>
                       </div>
                     </div>
-                    <div class="institutions-tags">
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
                       <span class="institutions-tag">Организация выставок</span>
                       <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
                     </div>
                   </div>
                   <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
@@ -730,24 +793,33 @@
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">+7 (495) 123-45-67</span>
+                          <a href="tel:+74951234567" class="institutions-text">+7 (495) 123-45-67</a>
                         </div>
                       </div>
                       <div class="institutions-detail-item-double">
                         <div class="institutions-detail-item">
                           <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
+                          <a href="mailto:info@sozvezdie.ru" class="institutions-text">info@sozvezdie.ru</a>
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
+                          <a href="https://www.sozvezdie.ru" class="institutions-text">www.sozvezdie.ru</a>
                         </div>
                       </div>
                     </div>
-                    <div class="institutions-tags">
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
                       <span class="institutions-tag">Организация выставок</span>
                       <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
                     </div>
                   </div>
                   <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>
@@ -784,24 +856,33 @@
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/phone-icon.svg" alt="Телефон" class="institutions-icon">
-                          <span class="institutions-text">+7 (495) 123-45-67</span>
+                          <a href="tel:+74951234567" class="institutions-text">+7 (495) 123-45-67</a>
                         </div>
                       </div>
                       <div class="institutions-detail-item-double">
                         <div class="institutions-detail-item">
                           <img src="img/email-icon.svg" alt="Email" class="institutions-icon">
-                          <span class="institutions-text">info@sozvezdie.ru</span>
+                          <a href="mailto:info@sozvezdie.ru" class="institutions-text">info@sozvezdie.ru</a>
                         </div>
                         <div class="institutions-detail-item">
                           <img src="img/website-icon.svg" alt="Сайт" class="institutions-icon">
-                          <span class="institutions-text">www.sozvezdie.ru</span>
+                          <a href="https://www.sozvezdie.ru" class="institutions-text">www.sozvezdie.ru</a>
                         </div>
                       </div>
                     </div>
-                    <div class="institutions-tags">
+                    <div class="institutions-tags" x-data="{
+                      showAllTags: false,
+                      toggleTags() { this.showAllTags = !this.showAllTags; },
+                      hasMoreTags: false,
+                      init() {
+                        this.$nextTick(() => {
+                          this.hasMoreTags = this.$el.querySelectorAll('span.institutions-tag').length > 2;
+                        });
+                      }
+                    }">
                       <span class="institutions-tag">Организация выставок</span>
                       <span class="institutions-tag">Проведение концертов и мастер-классов</span>
-                      <span class="institutions-tag institutions-tag--more">Ещё</span>
+                      <button class="institutions-tag institutions-tag--more" @click.stop="toggleTags()" x-show="hasMoreTags" x-text="showAllTags ? 'Скрыть' : 'Ещё'">Ещё</button>
                     </div>
                   </div>
                   <a href="#" class="institutions-link institutions-link-desktop-visible" x-show="hover" x-text="hover ? 'Перейти на страницу' : 'Узнать подробнее'">Узнать подробнее</a>

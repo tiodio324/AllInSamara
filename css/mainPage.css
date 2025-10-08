@@ -2743,6 +2743,10 @@ main {
   gap: 5px;
 }
 
+.institutions-detail-item a:hover {
+  border-bottom: 1px solid #FFFFFF;
+}
+
 .institutions-detail-item-double {
   display: flex;
   align-items: center;
