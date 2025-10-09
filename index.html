@@ -623,7 +623,6 @@
                 </div>
               </div>
             </div>
-        </div>
         <div class="calendar-grid">
               <div class="calendar-weekdays">
                 <span>пн</span><span>вт</span><span>ср</span><span>чт</span><span>пт</span><span>сб</span><span>вс</span>
@@ -1305,9 +1304,14 @@
         this.windowWidth = window.innerWidth;
       },
       get cardWidth() {
-        if (this.windowWidth >= 1601) return 920;
-        if (this.windowWidth >= 640) return 740;
-        return 230;
+        if (this.windowWidth > 1600) return 920;
+        if (this.windowWidth >= 900) return 740;
+        if (this.windowWidth >= 750) return 560;
+        if (this.windowWidth >= 640) return 400;
+        if (this.windowWidth > 440) return 231;
+        if (this.windowWidth > 370) return 238;
+        if (this.windowWidth > 300) return 245;
+        return 250;
       }
     }">
       <div class="container container-margin-top">
@@ -1333,7 +1337,7 @@
                 <div class="news-text">
                   <h3 class="news-title">Филармония запускает абонемент для студентов (Последняя карточка)</h3>
                   <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                  <div class="institutions-tags" x-data="{
+                  <div class="institutions-tags news-slider-tags" x-data="{
                     showAllTags: false,
                     toggleTags() { this.showAllTags = !this.showAllTags; },
                     hasMoreTags: false,
@@ -1360,7 +1364,7 @@
                 <div class="news-text">
                   <h3 class="news-title">1. Филармония запускает абонемент для студентов</h3>
                   <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                  <div class="institutions-tags" x-data="{
+                  <div class="institutions-tags news-slider-tags" x-data="{
                     showAllTags: false,
                     toggleTags() { this.showAllTags = !this.showAllTags; },
                     hasMoreTags: false,
@@ -1387,7 +1391,7 @@
                 <div class="news-text">
                   <h3 class="news-title">2. Филармония запускает абонемент для студентов</h3>
                   <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                  <div class="institutions-tags" x-data="{
+                  <div class="institutions-tags news-slider-tags" x-data="{
                     showAllTags: false,
                     toggleTags() { this.showAllTags = !this.showAllTags; },
                     hasMoreTags: false,
@@ -1413,7 +1417,7 @@
                 <div class="news-text">
                   <h3 class="news-title">Филармония запускает абонемент для студентов</h3>
                   <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                  <div class="institutions-tags" x-data="{
+                  <div class="institutions-tags news-slider-tags" x-data="{
                     showAllTags: false,
                     toggleTags() { this.showAllTags = !this.showAllTags; },
                     hasMoreTags: false,
@@ -1439,7 +1443,7 @@
                 <div class="news-text">
                   <h3 class="news-title">Филармония запускает абонемент для студентов</h3>
                   <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                  <div class="institutions-tags" x-data="{
+                  <div class="institutions-tags news-slider-tags" x-data="{
                     showAllTags: false,
                     toggleTags() { this.showAllTags = !this.showAllTags; },
                     hasMoreTags: false,
@@ -1465,7 +1469,7 @@
                 <div class="news-text">
                   <h3 class="news-title">Филармония запускает абонемент для студентов</h3>
                   <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                  <div class="institutions-tags" x-data="{
+                  <div class="institutions-tags news-slider-tags" x-data="{
                     showAllTags: false,
                     toggleTags() { this.showAllTags = !this.showAllTags; },
                     hasMoreTags: false,
@@ -1491,7 +1495,7 @@
                 <div class="news-text">
                   <h3 class="news-title">Филармония запускает абонемент для студентов</h3>
                   <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                  <div class="institutions-tags" x-data="{
+                  <div class="institutions-tags news-slider-tags" x-data="{
                     showAllTags: false,
                     toggleTags() { this.showAllTags = !this.showAllTags; },
                     hasMoreTags: false,
@@ -1517,7 +1521,7 @@
                 <div class="news-text">
                   <h3 class="news-title">Филармония запускает абонемент для студентов</h3>
                   <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                  <div class="institutions-tags" x-data="{
+                  <div class="institutions-tags news-slider-tags" x-data="{
                     showAllTags: false,
                     toggleTags() { this.showAllTags = !this.showAllTags; },
                     hasMoreTags: false,
@@ -1543,7 +1547,7 @@
                 <div class="news-text">
                   <h3 class="news-title">Филармония запускает абонемент для студентов</h3>
                   <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                  <div class="institutions-tags" x-data="{
+                  <div class="institutions-tags news-slider-tags" x-data="{
                     showAllTags: false,
                     toggleTags() { this.showAllTags = !this.showAllTags; },
                     hasMoreTags: false,
@@ -1569,7 +1573,7 @@
                 <div class="news-text">
                   <h3 class="news-title">Филармония запускает абонемент для студентов</h3>
                   <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                  <div class="institutions-tags" x-data="{
+                  <div class="institutions-tags news-slider-tags" x-data="{
                     showAllTags: false,
                     toggleTags() { this.showAllTags = !this.showAllTags; },
                     hasMoreTags: false,
@@ -1595,7 +1599,7 @@
                 <div class="news-text">
                   <h3 class="news-title">Филармония запускает абонемент для студентов (Последняя карточка)</h3>
                   <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                  <div class="institutions-tags" x-data="{
+                  <div class="institutions-tags news-slider-tags" x-data="{
                     showAllTags: false,
                     toggleTags() { this.showAllTags = !this.showAllTags; },
                     hasMoreTags: false,
@@ -1622,7 +1626,7 @@
                 <div class="news-text">
                   <h3 class="news-title">1. Филармония запускает абонемент для студентов</h3>
                   <p class="news-description">Молодёжь сможет посещать концерты по специальным льготным тарифам.</p>
-                  <div class="institutions-tags" x-data="{
+                  <div class="institutions-tags news-slider-tags" x-data="{
                     showAllTags: false,
                     toggleTags() { this.showAllTags = !this.showAllTags; },
                     hasMoreTags: false,
