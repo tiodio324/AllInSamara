@@ -50,8 +50,7 @@
   color: #222222;
 }
 
-/* 1400px */
-@media (max-width: 1400px) {
+@media (max-width: 1570px) {
   .search-input-wrapper, .nav-search {
     background: transparent;
   }

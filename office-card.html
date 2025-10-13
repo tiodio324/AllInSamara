@@ -47,11 +47,11 @@
         newsOpen: false,
         mobileMenuOpen: false,
         isDesktop: window.innerWidth > 1124,
-        isLargeScreen: window.innerWidth > 1400,
+        isLargeScreen: window.innerWidth > 1570,
         init() {
           window.addEventListener('resize', () => {
             this.isDesktop = window.innerWidth > 1124;
-            this.isLargeScreen = window.innerWidth > 1400;
+            this.isLargeScreen = window.innerWidth > 1570;
             if (this.isDesktop) {
               this.mobileMenuOpen = false;
             }
