@@ -554,20 +554,15 @@ main {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background: rgba(48, 62, 201, 0.15);
   transition: all 0.3s ease;
 }
-.slider-arrow--prev {
-  background: rgba(48, 62, 201, 0.15);
-}
-.slider-arrow--prev:hover {
+.slider-arrow:hover {
   background: rgba(48, 62, 201, 0.25);
   transform: scale(1.05);
 }
-.slider-arrow--next {
+.slider-arrow:active {
   background: #303EC9;
-}
-.slider-arrow--next:hover {
-  background: #252bb8;
   transform: scale(1.05);
 }
 .arrow-icon {
