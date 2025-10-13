@@ -1918,6 +1918,15 @@ main {
 .news-card:nth-child(11) { background-image: url('../img/news-card_1.png'); }
 .news-card:nth-child(12) { background-image: url('../img/news-card_1.png'); }
 
+.news-card {
+  filter: grayscale(100%);
+}
+
+.news-card.current {
+  filter: none;
+}
+
+
 .news-image {
   display: none;
 }
