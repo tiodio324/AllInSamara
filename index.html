@@ -1099,7 +1099,7 @@
       </div>
       
       <!-- Filter Modal -->
-      <div class="filter-modal" x-show="filterModal && modalInitialized" x-transition @click.away="filterModal = false" x-data="{ modalInitialized: false }" x-init="modalInitialized = true">
+      <div class="filter-modal" x-show="filterModal" x-transition :class="{ 'filter-modal-show': filterModal }" @click.away="filterModal = false">
         <div class="filter-modal-content" @click.stop>
           <div class="filter-modal-header">
             <h2>Фильтр</h2>
