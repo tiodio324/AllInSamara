@@ -232,7 +232,6 @@ main {
   text-decoration: none;
   padding: 8px 0;
   transition: color 0.3s ease;
-  white-space: nowrap;
   width: 100%;
 }
 .dropdown-link:hover {
