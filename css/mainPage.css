@@ -3513,7 +3513,7 @@ main {
   
   .header-nav .nav-link--no-dropdown {
     width: auto;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 15px 20px;
     min-width: 200px;
   }
