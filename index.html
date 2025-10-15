@@ -1739,5 +1739,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- Куки уведомление -->
+  <div class="cookies" x-data="{ show: true, }" x-show="show" x-transition>
+    <div class="cookies__text">Мы используем <a href="#privacy">cookie</a> и <a href="#privacy">рекомендательные технологии</a> для улучшения сервиса. Продолжая, вы соглашаетесь с нашей <a href="#privacy">Политикой конфиденциальности</a></div>
+    <a @click="show = false" class="cookies__button">Хорошо</a>
+  </div>
 </body>
 </html>

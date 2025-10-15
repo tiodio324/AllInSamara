@@ -3043,6 +3043,51 @@ main {
   max-width: 1520px;
 }
 
+/* Куки уведомление */
+.cookies {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 460px;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--bg);
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 10000;
+  box-shadow: var(--shadow-lg);
+}
+
+.cookies a {
+  color: var(--text);
+  text-decoration: underline solid var(--text);
+  text-underline-offset: 3px;
+}
+
+.cookies__button {
+  margin: 0;
+  padding: 15px 30px;
+  text-decoration: none !important;
+  width: 100%;
+  max-width: none;
+  background-color: #303EC9;
+  color: var(--bg) !important;
+  text-align: center;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: clamp(16px, 3vw, 18px);
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.cookies__button:hover {
+  transform: translateY(-2px);
+}
+
 @media (max-width: 2560px) {
   .news-cards {
     left: -17vw;
@@ -3732,6 +3777,14 @@ main {
   .search-refine-label,
   .search-refine-link {
     font-size: 16px;
+  }
+
+  .cookies {
+    max-width: 375px;
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    gap: 20px;
   }
 }
 
