@@ -90,9 +90,12 @@ main {
 
 /* Navigation */
 .header-nav {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 50px;
+}
+.header-nav-show {
+  display: flex;
 }
 .nav-links {
   display: flex;
@@ -163,6 +166,11 @@ main {
   overflow: visible;
   width: 245px;
   margin-top: 10px;
+  display: none;
+}
+
+.nav-dropdown-show {
+  display: block;
 }
 
 .nav-dropdown--left {

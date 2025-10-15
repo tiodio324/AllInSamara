@@ -55,14 +55,14 @@
           });
         }
       }">
-        <nav class="header-nav" x-show="mobileMenuOpen || isDesktop" x-transition>
+        <nav class="header-nav" x-show="mobileMenuOpen || isDesktop" x-transition :class="(isDesktop || mobileMenuOpen) ? 'header-nav-show' : ''">
         <div class="nav-links">
           <div class="nav-item" x-data="{ open: false }" @mouseenter="isDesktop && (open = true)" @mouseleave="isDesktop && (open = false)" @click.outside="open = false">
             <button type="button" class="nav-toggle" :aria-expanded="open" onclick="window.location.href='index.html';">
               <span class="nav-text">Поддержка</span>
               <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow" @click.stop.prevent="open = !open">
             </button>
-            <div class="nav-dropdown" x-show="open" x-transition>
+            <div class="nav-dropdown" x-show="open" x-transition :class="{ 'nav-dropdown-show': mobileMenuOpen || isDesktop }">
               <ul class="dropdown-list">
                 <li><a href="#support1" class="dropdown-link">Страница списка</a></li>
                 <li><a href="#support2" class="dropdown-link">Страница списка</a></li>
@@ -76,7 +76,7 @@
               <span class="nav-text">Мероприятия</span>
               <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow" @click.stop.prevent="open = !open">
             </button>
-            <div class="nav-dropdown" x-show="open" x-transition>
+            <div class="nav-dropdown" x-show="open" x-transition :class="{ 'nav-dropdown-show': mobileMenuOpen || isDesktop }">
               <ul class="dropdown-list">
                 <li><a href="category_on_the_water.html" class="dropdown-link">Категория: На Воде</a></li>
                 <li><a href="#events2" class="dropdown-link">Страница списка</a></li>
@@ -95,7 +95,7 @@
               <span class="nav-text">Учреждения</span>
               <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow" @click.stop.prevent="open = !open">
             </button>
-            <div class="nav-dropdown" x-show="open" x-transition>
+            <div class="nav-dropdown" x-show="open" x-transition :class="{ 'nav-dropdown-show': mobileMenuOpen || isDesktop }">
               <ul class="dropdown-list">
                 <li><a href="institutions.html" class="dropdown-link">Созвездие</a></li>
                 <li><a href="#places2" class="dropdown-link">Страница списка</a></li>
@@ -111,7 +111,7 @@
               <span class="nav-text">Новости</span>
               <img :src="open ? 'img/arrow-up.svg' : 'img/arrow-down.svg'" alt="Стрелка" class="nav-arrow" @click.stop.prevent="open = !open">
             </button>
-            <div class="nav-dropdown" x-show="open" x-transition>
+            <div class="nav-dropdown" x-show="open" x-transition :class="{ 'nav-dropdown-show': mobileMenuOpen || isDesktop }">
               <ul class="dropdown-list">
                 <li><a href="#news1" class="dropdown-link">Страница списка</a></li>
                 <li><a href="#news2" class="dropdown-link">Страница списка</a></li>
