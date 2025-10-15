@@ -2323,7 +2323,8 @@ main {
   flex-shrink: 0;
 }
 
-.contact-text p {
+.contact-text p, .contact-text a {
+  text-decoration: none;
   font-family: 'Inter Tight', sans-serif;
   font-size: 18px;
   font-weight: 400;
