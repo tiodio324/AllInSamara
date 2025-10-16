@@ -1196,7 +1196,7 @@ main {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  padding: 0 50px;
+  padding: 0 20px;
   margin-bottom: 30px;
   flex-wrap: wrap;
 }
@@ -1468,7 +1468,7 @@ main {
 
 .calendar-weekdays {
   display: flex;
-  justify-content: center;
+  justify-content: stretch;
   gap: 10px;
   width: 100%;
   overflow-x: auto;
@@ -1507,7 +1507,7 @@ main {
 
 .calendar-days {
   display: flex;
-  justify-content: center;
+  justify-content: stretch;
   gap: 10px;
   width: 100%;
   overflow-x: auto;
