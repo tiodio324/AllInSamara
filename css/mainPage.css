@@ -873,17 +873,10 @@ main {
 .event-date {
   position: absolute;
   left: 0;
+  bottom: 0;
   background: #A16C0A;
   padding: 8px 12px;
   border-radius: 0;
-}
-
-.recommended .event-date {
-  top: 160px;
-}
-
-.events-carousel-section .event-date {
-  top: 175px;
 }
 
 .event-date span {
@@ -905,7 +898,8 @@ main {
 .event-location {
   position: absolute;
   top: 5px;
-  transform: translateX(calc(50% - 40px));
+  left: 50%;
+  transform: translateX(-50%);
   background: rgba(48, 62, 201, 0.3);
   backdrop-filter: blur(15.6px);
   border-radius: 37px;
@@ -3287,16 +3281,9 @@ main {
     height: 385px;
   }
 
-  .recommended .event-date {
-    top: 100px;
-  }
-  
-  .events-carousel-section .event-date {
-    top: 155px;
-  }
-
   .event-location {
-    transform: translateX(calc(50% - 90px));
+    left: 25%;
+    transform: translateX(-25%);
   }
 
   .news-cards {
@@ -4238,6 +4225,11 @@ main {
   
   .event-content {
     width: 280px !important;
+  }
+
+  .event-location {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .news-cards {
