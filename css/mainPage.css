@@ -3066,8 +3066,8 @@ main {
 }
 
 .cookies a {
-  color: var(--text);
-  text-decoration: underline solid var(--text);
+  color: #1b1f23;
+  text-decoration: underline solid #1b1f23;
   text-underline-offset: 3px;
 }
 
